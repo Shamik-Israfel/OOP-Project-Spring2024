@@ -15,10 +15,11 @@ import javafx.stage.Stage;
  *
  * @author hp
  */
- public class Simulating_Operations_Of_Bangladesh_Football_Fedaration  extends Application {
-    @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/ggg/g.fxml"));
+public class Simulating_Operations_Of_Bangladesh_Football_Fedaration extends Application {
+    
+     @Override
+     public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/Shamik_Mondal_2221145/HR_Manager/employeeInformation.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -32,5 +33,4 @@ import javafx.stage.Stage;
     public static void main(String[] args) {
         launch(args);
     }
-
 }

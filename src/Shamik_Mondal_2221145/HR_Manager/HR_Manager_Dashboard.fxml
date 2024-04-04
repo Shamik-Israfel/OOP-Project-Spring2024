@@ -1,11 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
-    
+
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="646.0" style="-fx-background-color: #E6F8F3;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
+   <children>
+      <Label layoutX="115.0" layoutY="14.0" prefHeight="110.0" prefWidth="432.0" text="Welcome to The DashBoard of H.R Manager                             ">
+         <font>
+            <Font name="System Bold" size="19.0" />
+         </font>
+      </Label>
+      <Label graphicTextGap="20.0" layoutX="60.0" layoutY="136.0" prefHeight="61.0" prefWidth="567.0" text="Human Resource is not the thing they do.It is the thing that runs the buisness." textAlignment="JUSTIFY">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="147.0" layoutY="232.0" prefHeight="97.0" prefWidth="163.0" />
+      <MenuBar layoutY="14.0" prefHeight="32.0" prefWidth="610.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Employee selection">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Access to Employee Information" />
+                  <MenuItem mnemonicParsing="false" text="Assign Training and workshops " />
+                  <MenuItem mnemonicParsing="false" text="Pay Salaries " />
+                  <MenuItem mnemonicParsing="false" text="Add Job Recruitment" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Request ">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Leave Request and approvals" />
+                  <MenuItem mnemonicParsing="false" text="Complaints/Problems" />
+                  <MenuItem mnemonicParsing="false" text="apply for leave " />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Others ">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Issue a complaint " />
+                  <MenuItem mnemonicParsing="false" text="view notice" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Time Mangement ">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Attendance and performance" />
+                  <MenuItem mnemonicParsing="false" text="Issue a complaint " />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Log Out ">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Log Out " />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Label layoutX="165.0" layoutY="232.0" prefHeight="47.0" prefWidth="432.0" text="Keeping the human in resource since the company funding date " />
+   </children>
 </AnchorPane>
