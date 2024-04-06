@@ -32,7 +32,7 @@ public class HRleaveController implements Initializable{
     @Override
     public void initialize(URL location, ResourceBundle resources) {
        daysCombobox.getItems().addAll(1,2,3,4,5,6,7,14,30);
-       departmentCombobox.getItems().addAll("Accounts", "Cleaner", "Human Resource", "Administration"); 
+       departmentCombobox.getItems().addAll("Accounts", "President", "Human Resource", "Coach"); 
     }
     
     
