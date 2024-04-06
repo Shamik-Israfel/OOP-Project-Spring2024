@@ -16,7 +16,7 @@ import javafx.scene.control.TextField;
  *
  * @author hp
  */
-public class HRleaveController {
+public class HRleaveController implements Initializable{
 
     @FXML
     private TextField statusTextField;
@@ -25,12 +25,17 @@ public class HRleaveController {
     @FXML
     private TextField nameTextField;
     @FXML
-    private ComboBox<?> departmentCombobox;
+    private ComboBox<String> departmentCombobox;
     @FXML
     private TextField codeTextField;
 
     @FXML
     private void applyLeaveButtonOnClicked(ActionEvent event) {
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        
     }
 }
 
