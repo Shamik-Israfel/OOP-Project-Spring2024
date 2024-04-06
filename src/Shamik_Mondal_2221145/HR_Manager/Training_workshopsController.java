@@ -4,8 +4,12 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -37,18 +41,35 @@ public class Training_workshopsController implements Initializable {
     @FXML
     private ComboBox<String> amPmComboBox;
     @FXML
-    private TableView<?> employeeListTableView;
+    private TableView<traineeModelClass> employeeListTableView;
     @FXML
-    private TableColumn<?, ?> employeeNameTableColumn;
+    private TableColumn<traineeModelClass, String> employeeNameTableColumn;
     @FXML
-    private TableColumn<?, ?> employeeCodeTableColumn;
+    private TableColumn<traineeModelClass, Integer> employeeCodeTableColumn;
+    
+    private ObservableList<traineeModelClass> twlist;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL url, ResourceBundle resources) {
+        StartTimeComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
+        amPmComboBox.getItems().addAll("AM", "PM");
+
+        twlist = FXCollections.observableArrayList();
+        employeeListTableView.setItems(twlist);
     }
 
     @FXML
-    private void addEmployeeButtonOnClicked(ActionEvent event) {
+    private void addEmployeeButtonOnClicked(ActionEvent event) throws IOException {
+        String name = nameTextField.getText();
+        int code = Integer.parseInt(codeTextField.getText());
+
+        traineeModelClass traineeList = new traineeModelClass(name, code);
+        twlist.add(traineeList);
+        //employeeListTableView.getItems().add(traineeList);
+
+        nameTextField.clear();
+        codeTextField.clear();
+
     }
 
     @FXML
