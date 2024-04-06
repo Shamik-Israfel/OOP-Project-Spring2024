@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="646.0" style="-fx-background-color: #E6F8F3;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
+<AnchorPane id="AnchorPane" prefHeight="463.0" prefWidth="646.0" style="-fx-background-color: #E6F8F3;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
    <children>
       <Label layoutX="115.0" layoutY="14.0" prefHeight="110.0" prefWidth="432.0" text="Welcome to The DashBoard of H.R Manager                             ">
          <font>
