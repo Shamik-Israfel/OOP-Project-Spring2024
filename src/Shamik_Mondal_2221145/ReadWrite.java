@@ -105,7 +105,10 @@ public class ReadWrite {
                 } catch (Exception e) {
                     System.out.println("Shamik Performance exe");
 
-                } catch (Exception e) {
+                }
+            }
+        }
+                catch (Exception e) {
                     System.out.println("Astronut File");
                 } finally {
                     try {
