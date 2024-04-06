@@ -79,8 +79,8 @@ public class ReadWrite {
                         SData.add((SignupData) ois.readObject());
                     }
                 } catch (Exception e) {
-                    System.out.println("Signup execution");
-                }
+                    System.out.println("Signup execution");}
+                
                 //  System.out.println("Hasib");               
             } else if (instance instanceof timeAttendanceModel) {
                 f = new File(fileName);
@@ -88,9 +88,9 @@ public class ReadWrite {
                 ois = new ObjectInputStream(fw);
                 try {
                     while (true) {
-                        AttendanceData.add((timeAttendanceModel) ois.readObject());
-                    }
-                } catch (Exception e) {
+                        AttendanceData.add((timeAttendanceModel) ois.readObject());}
+                } 
+                catch (Exception e) {
                     System.out.println("Shamik attendance exe");
                 }
                 //  System.out.println("Meraj");               
@@ -100,11 +100,11 @@ public class ReadWrite {
                 ois = new ObjectInputStream(fw);
                 try {
                     while (true) {
-                        PerformanceData.add((timePerformanceModel) ois.readObject());
-                    }
-                } catch (Exception e) {
-                    System.out.println("Shamik Performance exe");
-
+                        PerformanceData.add((timePerformanceModel) ois.readObject());}
+                } 
+                catch (Exception e) {
+                    System.out.println("Shamik Performance exe");}
+            }
                 } catch (Exception e) {
                     System.out.println("Astronut File");
                 } finally {
@@ -118,6 +118,7 @@ public class ReadWrite {
                 }
 
                 if (instance instanceof timeAttendanceModel) {
+                    
                     return AttendanceData;
                 } else if (instance instanceof timePerformanceModel) {
                     return PerformanceData;
