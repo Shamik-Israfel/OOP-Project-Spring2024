@@ -23,4 +23,5 @@ public class HR_Manager_DashboardController implements Initializable {
         // TODO
     }    
     
+    
 }
