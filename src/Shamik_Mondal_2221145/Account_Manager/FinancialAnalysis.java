@@ -13,11 +13,11 @@ import java.io.Serializable;
 public class FinancialAnalysis implements Serializable{
     private double totalIncome;
     private double totalExpenses;
+    private double averageTotalAssets;
     private double netIncome;
     private double netProfitMargin;
     private double returnOnAssets;
-        private double assetTurnover;
-    private double averageTotalAssets;
+    private double assetTurnover;
      public FinancialAnalysis(double totalIncome, double totalExpenses,
                              double averageTotalAssets) {
         this.totalIncome = totalIncome;

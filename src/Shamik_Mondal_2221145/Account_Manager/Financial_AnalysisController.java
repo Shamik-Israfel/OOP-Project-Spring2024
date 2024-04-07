@@ -9,6 +9,7 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 
 /**
@@ -24,14 +25,16 @@ public class Financial_AnalysisController implements Initializable {
     private TextField totalExpenseTextField;
     @FXML
     private TextField averageTotalAssetsTextField;
+    @FXML
+    private TextArea financialAnalysisTextArea;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+
+    }
 
     @FXML
     private void generatePDFButtonOnClick(ActionEvent event) {
@@ -39,6 +42,12 @@ public class Financial_AnalysisController implements Initializable {
 
     @FXML
     private void showFinancialAnalysisButtonOnClick(ActionEvent event) {
+        FinancialAnalysis financialAnalysis = new FinancialAnalysis(
+                Double.parseDouble(totalIncomeTextField.getText()),
+                Double.parseDouble(totalExpenseTextField.getText()),
+                Double.parseDouble(averageTotalAssetsTextField.getText())
+        );
+        financialAnalysisTextArea.appendText(financialAnalysis.toString());
     }
-    
+
 }
