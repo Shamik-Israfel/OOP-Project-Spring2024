@@ -53,9 +53,8 @@ public class Training_workshopsController implements Initializable {
     public void initialize(URL url, ResourceBundle resources) {
         StartTimeComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
         amPmComboBox.getItems().addAll("AM", "PM");
-
+        //employeeListTableView.setItems(twlist); 
         twlist = FXCollections.observableArrayList();
-        employeeListTableView.setItems(twlist);
     }
 
     @FXML
@@ -64,8 +63,8 @@ public class Training_workshopsController implements Initializable {
         int code = Integer.parseInt(codeTextField.getText());
 
         traineeModelClass traineeList = new traineeModelClass(name, code);
-        twlist.add(traineeList);
-        //employeeListTableView.getItems().add(traineeList);
+
+        employeeListTableView.getItems().add(traineeList);
 
         nameTextField.clear();
         codeTextField.clear();
