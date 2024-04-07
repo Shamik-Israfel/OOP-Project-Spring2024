@@ -14,5 +14,51 @@ public class FinancialAnalysis implements Serializable{
     private double totalIncome;
     private double totalExpenses;
     private double netIncome;
-    
+    private double netProfitMargin;
+    private double returnOnAssets;
+        private double assetTurnover;
+    private double averageTotalAssets;
+     public FinancialAnalysis(double totalIncome, double totalExpenses,
+                             double averageTotalAssets) {
+        this.totalIncome = totalIncome;
+        this.totalExpenses = totalExpenses;
+        this.averageTotalAssets = averageTotalAssets;
+        
+        this.netIncome = totalIncome - totalExpenses;
+        this.netProfitMargin = (netIncome / totalIncome) * 100.0;
+        this.returnOnAssets = netIncome / averageTotalAssets;
+        this.assetTurnover = totalIncome / averageTotalAssets;
+    }
+
+    public double getNetIncome() {
+        return netIncome;
+    }
+
+    public double getNetProfitMargin() {
+        return netProfitMargin;
+    }
+
+    public double getReturnOnAssets() {
+        return returnOnAssets;
+    }
+
+    public double getAssetTurnover() {
+        return assetTurnover;
+    }
+
+    public double getAverageTotalAssets() {
+        return averageTotalAssets;
+    }
+
+    @Override
+    public String toString() {
+return "FinancialAnalysis{" +
+                "\n\ttotalIncome=" + totalIncome +
+                ",\n\ttotalExpenses=" + totalExpenses +
+                ",\n\tnetIncome=" + netIncome +
+                ",\n\tnetProfitMargin=" + netProfitMargin +
+                ",\n\treturnOnAssets=" + returnOnAssets +
+                ",\n\tassetTurnover=" + assetTurnover +
+                ",\n\taverageTotalAssets=" + averageTotalAssets +
+                "\n}";    }
 }
