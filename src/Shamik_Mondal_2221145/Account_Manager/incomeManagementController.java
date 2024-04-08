@@ -41,7 +41,7 @@ public class incomeManagementController implements Initializable{
     
      @Override
     public void initialize(URL location, ResourceBundle resources) {
-             yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,2022,2023);
+         yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
  
        incList = new ArrayList<incomeManagement>();
         

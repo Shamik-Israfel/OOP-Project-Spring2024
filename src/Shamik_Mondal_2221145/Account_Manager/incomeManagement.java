@@ -29,7 +29,7 @@ public class incomeManagement implements Serializable{
         //this.year=year;
         this.sellingTickets = sellingTickets;
         this.sponsorDeals = sponsorDeals;
-        this.broadcastsRightsDistribution = broadcastsRightsDistribution;
+        this.broadcastsRights = broadcastsRights;
         
         
         
@@ -48,17 +48,23 @@ public class incomeManagement implements Serializable{
       //  this.year = year;
     //}
 
-    public double sellingTicketsDistribution() {
+    public double getTotalIncome() {
+        return totalIncome;
+    }
+
+    public double getSellingTicketsDistribution() {
         return sellingTicketsDistribution;
     }
 
-    public double sponsorDealsDistribution() {
+    public double getSponsorDealsDistribution() {
         return sponsorDealsDistribution;
     }
 
-    public double getbroadcastsRightsDistribution() {
+    public double getBroadcastsRightsDistribution() {
         return broadcastsRightsDistribution;
     }
+
+   
 
     @Override
 public String toString() {
