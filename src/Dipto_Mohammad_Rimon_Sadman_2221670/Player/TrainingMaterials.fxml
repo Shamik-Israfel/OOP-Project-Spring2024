@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="167.0" layoutY="14.0" text="Training Materials">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <VBox layoutX="14.0" layoutY="44.0" prefHeight="342.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button fx:id="audioButton" mnemonicParsing="false" text="Audio Materials" />
+            <Button fx:id="videoButton" mnemonicParsing="false" text="Video Materials" />
+            <Button fx:id="bookSessionButton" mnemonicParsing="false" text="Book Session with Coach" />
+         </children>
+      </VBox>
+      <Button fx:id="backToDashboardButton" layoutX="276.0" layoutY="308.0" mnemonicParsing="false" text="Back to Dashboard" />
+   </children>
+</AnchorPane>
