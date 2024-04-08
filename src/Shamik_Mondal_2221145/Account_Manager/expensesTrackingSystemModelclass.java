@@ -16,50 +16,73 @@ public class expensesTrackingSystemModelclass implements Serializable {
     private double amountOfKitsExpenditure;
     private double amountForTraininigSession;
     private double amountUsedForTotalSalaries;
-    private double totalAmountForExpenses;
-    private double averageexpensesperCategory;
-    private double percentageOfExpensesByFoodAndWaterSupply;
-    private double percentageOfExpensesByKitsExpenditure;
-    private double percentageOfExpensesByTraininigSession;
-    private double percentageOfExpensesForTotalSalaries;
+    
 
     public expensesTrackingSystemModelclass(double amountUsedForFoodAndWatersupply, double amountOfKitsExpenditure, double amountForTraininigSession, double amountUsedForTotalSalaries) {
         this.amountUsedForFoodAndWatersupply = amountUsedForFoodAndWatersupply;
         this.amountOfKitsExpenditure = amountOfKitsExpenditure;
         this.amountForTraininigSession = amountForTraininigSession;
         this.amountUsedForTotalSalaries = amountUsedForTotalSalaries;
-
-        this.totalAmountForExpenses = amountUsedForFoodAndWatersupply + amountOfKitsExpenditure + amountForTraininigSession + amountUsedForTotalSalaries;
-        this.averageexpensesperCategory = totalAmountForExpenses / 4;
-        this.percentageOfExpensesByFoodAndWaterSupply = (amountUsedForFoodAndWatersupply / totalAmountForExpenses) * 100;
-        this.percentageOfExpensesByKitsExpenditure = (amountOfKitsExpenditure / totalAmountForExpenses) * 100;
-        this.percentageOfExpensesByTraininigSession = (amountForTraininigSession / totalAmountForExpenses) * 100;
-        this.percentageOfExpensesForTotalSalaries = (amountUsedForTotalSalaries / totalAmountForExpenses) * 100;
-
     }
 
-    public double getTotalAmountForExpenses() {
-        return totalAmountForExpenses;
+    public double getAmountUsedForFoodAndWatersupply() {
+        return amountUsedForFoodAndWatersupply;
     }
 
-    public double getAverageexpensesperCategory() {
-        return averageexpensesperCategory;
+    public void setAmountUsedForFoodAndWatersupply(double amountUsedForFoodAndWatersupply) {
+        this.amountUsedForFoodAndWatersupply = amountUsedForFoodAndWatersupply;
     }
 
-    public double getPercentageOfExpensesByFoodAndWaterSupply() {
-        return percentageOfExpensesByFoodAndWaterSupply;
+    public double getAmountOfKitsExpenditure() {
+        return amountOfKitsExpenditure;
     }
 
-    public double getPercentageOfExpensesByKitsExpenditure() {
-        return percentageOfExpensesByKitsExpenditure;
+    public void setAmountOfKitsExpenditure(double amountOfKitsExpenditure) {
+        this.amountOfKitsExpenditure = amountOfKitsExpenditure;
     }
 
-    public double getPercentageOfExpensesByTraininigSession() {
-        return percentageOfExpensesByTraininigSession;
+    public double getAmountForTraininigSession() {
+        return amountForTraininigSession;
     }
 
-    public double getPercentageOfExpensesForTotalSalaries() {
-        return percentageOfExpensesForTotalSalaries;
+    public void setAmountForTraininigSession(double amountForTraininigSession) {
+        this.amountForTraininigSession = amountForTraininigSession;
+    }
+
+    public double getAmountUsedForTotalSalaries() {
+        return amountUsedForTotalSalaries;
+    }
+
+    public void setAmountUsedForTotalSalaries(double amountUsedForTotalSalaries) {
+        this.amountUsedForTotalSalaries = amountUsedForTotalSalaries;
+    }
+
+  
+
+    
+
+    public double TotAmountForExpenses() {
+        return amountUsedForFoodAndWatersupply + amountOfKitsExpenditure + amountForTraininigSession + amountUsedForTotalSalaries;
+    }
+
+    public double AvexpensesperCateg() {
+        return (TotAmountForExpenses() / 4);
+    }
+
+    public double PerOfExpFoodAndWaterSupply() {
+        return (amountUsedForFoodAndWatersupply / TotAmountForExpenses()) * 100;
+    }
+
+    public double PerOfExpByKitsExpenditure() {
+        return (amountOfKitsExpenditure / TotAmountForExpenses()) * 100;
+    }
+
+    public double PerOfExpByTraininigSession() {
+        return (amountForTraininigSession / TotAmountForExpenses()) * 100;
+    }
+
+    public double PerOfExpensesForToySal() {
+        return (amountUsedForTotalSalaries / TotAmountForExpenses()) * 100;
     }
 
     @Override
@@ -69,15 +92,15 @@ public class expensesTrackingSystemModelclass implements Serializable {
                 + ",\n    amountOfKitsExpenditure=" + amountOfKitsExpenditure
                 + ",\n    amountForTraininigSession=" + amountForTraininigSession
                 + ",\n    amountUsedForTotalSalaries=" + amountUsedForTotalSalaries
-                + ",\n    totalAmountForExpenses=" + totalAmountForExpenses
-                + ",\n    averageexpensesperCategory=" + averageexpensesperCategory
-                + ",\n    percentageOfExpensesByFoodAndWaterSupply=" + percentageOfExpensesByFoodAndWaterSupply
-                + ",\n    percentageOfExpensesByKitsExpenditure=" + percentageOfExpensesByKitsExpenditure
-                + ",\n    percentageOfExpensesByTraininigSession=" + percentageOfExpensesByTraininigSession
-                + ",\n    percentageOfExpensesForTotalSalaries=" + percentageOfExpensesForTotalSalaries
+                + ",\n    totalAmountForExpenses=" + TotAmountForExpenses()
+                + ",\n    averageexpensesperCategory=" + AvexpensesperCateg()
+                + ",\n    percentageOfExpensesByFoodAndWaterSupply=" + PerOfExpFoodAndWaterSupply()
+                + ",\n    percentageOfExpensesByKitsExpenditure=" + PerOfExpByKitsExpenditure()
+                + ",\n    percentageOfExpensesByTraininigSession=" + PerOfExpByTraininigSession()
+                + ",\n    percentageOfExpensesForTotalSalaries=" + PerOfExpensesForToySal()
                 + "\n}";
     }
 
-}
 
+}
 
