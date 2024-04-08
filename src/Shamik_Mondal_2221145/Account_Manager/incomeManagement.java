@@ -12,6 +12,7 @@ import java.io.Serializable;
  */
 
 public class incomeManagement implements Serializable{
+    private Integer year;
     private double sellingTickets;
     private double sponsorDeals;
     private double broadcastsRights;
@@ -21,8 +22,10 @@ public class incomeManagement implements Serializable{
     private double broadcastsRightsDistribution;
     
     
- public incomeManagement(double sellingTickets, double sponsorDeals,
+ public incomeManagement(Integer year,double sellingTickets, double sponsorDeals,
                              double broadcastsRights) {
+        
+        this.year=year;
         this.sellingTickets = sellingTickets;
         this.sponsorDeals = sponsorDeals;
         this.broadcastsRightsDistribution = broadcastsRightsDistribution;
@@ -35,6 +38,10 @@ public class incomeManagement implements Serializable{
         this.broadcastsRightsDistribution=(broadcastsRights/totalIncome)*100.0;
 
 }
+
+    public Integer getYear() {
+        return year;
+    }
 
     public double sellingTicketsDistribution() {
         return sellingTicketsDistribution;
@@ -51,6 +58,7 @@ public class incomeManagement implements Serializable{
     @Override
 public String toString() {
     return "incomeManagement{" +
+            "\n    year=" + year +
             "\n    sellingTickets=" + sellingTickets +
             ",\n    sponsorDeals=" + sponsorDeals +
             ",\n    broadcastsRights=" + broadcastsRights +
