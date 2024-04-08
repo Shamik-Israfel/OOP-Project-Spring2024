@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author hp
  */
-class traineeModelClass implements Serializable{
+public class traineeModelClass implements Serializable{
             protected String name;
             protected int code;
 

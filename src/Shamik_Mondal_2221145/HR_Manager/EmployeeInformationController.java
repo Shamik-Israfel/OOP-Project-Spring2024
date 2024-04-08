@@ -94,16 +94,6 @@ public class EmployeeInformationController implements Initializable {
 
     @FXML
     private void addEmployeeButtonOnClicked(ActionEvent event) {
-        Employee dummyemployeeinfo = new Employee(0, "", "", LocalDate.of(2023, 02, 02), "", "", "", "", "", LocalDate.of(2023, 02, 02), 0L);
-        ObservableList<Employee> empList = (ObservableList<Employee>) ReadWrite.readObjectToFile("EmployeeINFO", dummyemployeeinfo);
-
-        empInfoTableView.getItems().addAll(empList);
-         
-
-    }
-
-    @FXML
-    private void showInformationButtonOnClicked(ActionEvent event) {
          String name = nameTextField.getText();
         int code = Integer.parseInt(employeeCodeTextField.getText());
         String address = addressTextField.getText();
@@ -135,6 +125,21 @@ public class EmployeeInformationController implements Initializable {
         }
         
     }
+
+
+    @FXML
+    private void showInformationButtonOnClicked(ActionEvent event) {
+         
+Employee dummyemployeeinfo = new Employee(0, "", "", LocalDate.of(2023, 02, 02), "", "", "", "", "", LocalDate.of(2023, 02, 02), 0L);
+        ObservableList<Employee> empList = (ObservableList<Employee>) ReadWrite.readObjectToFile("EmployeeINFO", dummyemployeeinfo);
+
+        empInfoTableView.getItems().addAll(empList);
+         
+
+    }
+
+        
+    
 
     @FXML
     private void downloadPdfButtonOnClicked(ActionEvent event) {

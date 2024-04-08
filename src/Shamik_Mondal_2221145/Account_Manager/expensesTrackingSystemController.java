@@ -53,6 +53,18 @@ public class expensesTrackingSystemController implements Initializable{
     
     @FXML
     private void totalExpensesDetailsButtonOnClick(ActionEvent event) {
+        
+        expensesTrackingSystemModelclass ExpensesTrackingSystemModelclass =new  expensesTrackingSystemModelclass(
+        
+                
+   
+                
+                Double.parseDouble(amountUsedForFoodAndWatersupplyTextField.getText()),
+                Double.parseDouble(amountOfKitsExpenditureTextField.getText()),
+                Double.parseDouble(amountForTraininigSessionTextField.getText()),
+                Double.parseDouble(amountUsedForTotalSalariesTextField.getText())        
+                        
+        );
     }
 
     @FXML

@@ -19,6 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 /**
  *
@@ -53,18 +54,19 @@ public class Training_workshopsController implements Initializable {
     public void initialize(URL url, ResourceBundle resources) {
         StartTimeComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
         amPmComboBox.getItems().addAll("AM", "PM");
-        //employeeListTableView.setItems(twlist); 
         twlist = FXCollections.observableArrayList();
+        employeeNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        employeeCodeTableColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
     }
 
     @FXML
     private void addEmployeeButtonOnClicked(ActionEvent event) throws IOException {
-        String name = nameTextField.getText();
-        int code = Integer.parseInt(codeTextField.getText());
+        String n = nameTextField.getText();
+        int c = Integer.parseInt(codeTextField.getText());
 
-        traineeModelClass traineeList = new traineeModelClass(name, code);
-
-        employeeListTableView.getItems().add(traineeList);
+        traineeModelClass tList = new traineeModelClass(n, c);
+        twlist.add(tList);
+        employeeListTableView.setItems(twlist); 
 
         nameTextField.clear();
         codeTextField.clear();

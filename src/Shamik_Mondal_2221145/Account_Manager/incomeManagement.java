@@ -18,27 +18,40 @@ public class incomeManagement implements Serializable{
     private double sellingTickets;
     private double sponsorDeals;
     private double broadcastsRights;
-    private double totalIncome;
-    private double  sellingTicketsDistribution;
-    private double  sponsorDealsDistribution;
-    private double broadcastsRightsDistribution;
-    
-    
- public incomeManagement(double sellingTickets, double sponsorDeals, double broadcastsRights) {
-        
-        //this.year=year;
+
+    public incomeManagement(double sellingTickets, double sponsorDeals, double broadcastsRights) {
         this.sellingTickets = sellingTickets;
         this.sponsorDeals = sponsorDeals;
         this.broadcastsRights = broadcastsRights;
-        
-        
-        
-        this.totalIncome = sellingTickets+sponsorDeals+broadcastsRights;
-        this.sellingTicketsDistribution=(sellingTickets/totalIncome)*100.0;
-        this.sponsorDealsDistribution=(sponsorDeals/totalIncome)*100.0;
-        this.broadcastsRightsDistribution=(broadcastsRights/totalIncome)*100.0;
+    }
 
-}
+    public double getSellingTickets() {
+        return sellingTickets;
+    }
+
+    public void setSellingTickets(double sellingTickets) {
+        this.sellingTickets = sellingTickets;
+    }
+
+    public double getSponsorDeals() {
+        return sponsorDeals;
+    }
+
+    public void setSponsorDeals(double sponsorDeals) {
+        this.sponsorDeals = sponsorDeals;
+    }
+
+    public double getBroadcastsRights() {
+        return broadcastsRights;
+    }
+
+    public void setBroadcastsRights(double broadcastsRights) {
+        this.broadcastsRights = broadcastsRights;
+    }
+   
+    
+    
+
 
     //public Integer getYear() {
         //return year;
@@ -46,37 +59,35 @@ public class incomeManagement implements Serializable{
 
     //public void setYear(Integer year) {
       //  this.year = year;
-    //}
-
-    public double getTotalIncome() {
-        return totalIncome;
-    }
-
-    public double getSellingTicketsDistribution() {
-        return sellingTicketsDistribution;
-    }
-
-    public double getSponsorDealsDistribution() {
-        return sponsorDealsDistribution;
-    }
-
-    public double getBroadcastsRightsDistribution() {
-        return broadcastsRightsDistribution;
-    }
-
+   
    
 
-    @Override
+    public double tIncome(){
+        return (sellingTickets+sponsorDeals+broadcastsRights);}
+    
+    public double sellTicketsDist(){
+         return ((sellingTickets/tIncome())*100.0);}
+    
+     public double sponDealsDist(){
+         return ((sponsorDeals/tIncome())*100.0);}
+     
+     public double broadRightsDist(){
+        return ((broadcastsRights/tIncome())*100.0);
+     }
+     
+     
+    
+    @Override 
 public String toString() {
     return "incomeManagement{" +
           //  "\n    year=" + year +
             "\n    sellingTickets=" + sellingTickets +
             ",\n    sponsorDeals=" + sponsorDeals +
             ",\n    broadcastsRights=" + broadcastsRights +
-            ",\n    totalIncome=" + totalIncome +
-            ",\n    sellingTicketsDistribution=" + sellingTicketsDistribution +
-            ",\n    sponsorDealsDistribution=" + sponsorDealsDistribution +
-            ",\n    broadcastsRightsDistribution=" + broadcastsRightsDistribution +
+            ",\n    totalIncome=" + tIncome() +
+            ",\n    sellingTicketsDistribution=" + sellTicketsDist() +
+            ",\n    sponsorDealsDistribution=" + sponDealsDist() +
+            ",\n    broadcastsRightsDistribution=" + broadRightsDist() +
             "\n}";
 }
 
