@@ -9,7 +9,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="546.0" prefWidth="677.0" style="-fx-background-color: #48C9B0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.Account_Manager.ExpensesTrackingSystemController">
+<AnchorPane id="AnchorPane" prefHeight="546.0" prefWidth="677.0" style="-fx-background-color: #48C9B0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.Account_Manager.expensesTrackingSystemController">
    <children>
       <Label layoutX="14.0" layoutY="21.0" prefHeight="29.0" prefWidth="312.0" text="Amount used for Food and water Supply:">
          <font>
@@ -58,7 +58,7 @@
       </Button>
       <Text fx:id="expTextArea" layoutX="218.0" layoutY="268.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="78.99999812245369">
          <font>
-            <Font name="Tahoma" size="18.0" />
+            <Font name="Century Gothic" size="18.0" />
          </font>
       </Text>
       <Label layoutX="11.0" layoutY="247.0" prefHeight="31.0" prefWidth="207.0" text="Expenses on the Year of:">

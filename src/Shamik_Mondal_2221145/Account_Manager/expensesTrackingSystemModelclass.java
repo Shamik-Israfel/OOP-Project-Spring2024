@@ -1,0 +1,47 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package Shamik_Mondal_2221145.Account_Manager;
+
+import java.io.Serializable;
+
+/**
+ *
+ * @author hp
+ */
+public class expensesTrackingSystemModelclass implements Serializable{
+    private double amountUsedForFoodAndWatersupply;
+    private double amountOfKitsExpenditure;
+    private double amountForTraininigSession;
+    private double amountUsedForTotalSalaries;
+    
+   public  expensesTrackingSystemModelclass  (double amountUsedForFoodAndWatersupply,
+     double amountOfKitsExpenditure,
+     double amountForTraininigSession,
+     double amountUsedForTotalSalaries){
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   }
+    
+    
+    
+}
