@@ -27,7 +27,7 @@ import javafx.scene.text.Text;
  *
  * @author hp
  */
-public class incomeManagementController implements Initializable{
+public class incomeManagementController implements Initializable {
 
     @FXML
     private TextField sellingTicketsTextArea;
@@ -37,82 +37,62 @@ public class incomeManagementController implements Initializable{
     private TextField broadcastRightsTextArea;
     @FXML
     private ComboBox<Integer> yearIncComboBox;
-   // private ArrayList<incomeManagement> incList;    
+    // private ArrayList<incomeManagement> incList;    
     @FXML
     private Text yearText;
-      private ObservableList<incomeManagement>  incList;
+    private ObservableList<incomeManagement> incList;
     @FXML
     private TableView<incomeManagement> calculateTableView;
     @FXML
-    private TableColumn<incomeManagement,Double> ticketsAmountTableColumn;
+    private TableColumn<incomeManagement, Double> ticketsAmountTableColumn;
     @FXML
-    private TableColumn<incomeManagement,Double> sponsorshipDealsAmountTableView;
+    private TableColumn<incomeManagement, Double> sponsorshipDealsAmountTableView;
     @FXML
-    private TableColumn<incomeManagement,Double> broadcastsRightsAmountTableColumn;
+    private TableColumn<incomeManagement, Double> broadcastsRightsAmountTableColumn;
     @FXML
-    private TableColumn<incomeManagement,Double> totalIncomeTableColumn;
+    private TableColumn<incomeManagement, Double> totalIncomeTableColumn;
     @FXML
-    private TableColumn<incomeManagement,Double> sellTickDistTableColumn;
+    private TableColumn<incomeManagement, Double> sellTickDistTableColumn;
     @FXML
     private TableColumn<incomeManagement, Double> sponDealsDistTableColumn;
     @FXML
-    private TableColumn<incomeManagement,Double> broadRightsDistTableColumn;
-    
-       
+    private TableColumn<incomeManagement, Double> broadRightsDistTableColumn;
 
-    
-    
-     @Override
+    @Override
     public void initialize(URL location, ResourceBundle resources) {
-         yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
- 
-    ticketsAmountTableColumn.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("sellingTickets"));
-    sponsorshipDealsAmountTableView.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("sponsorDeals"));
-    broadcastsRightsAmountTableColumn.setCellValueFactory(new PropertyValueFactory<incomeManagement,Double>("broadcastsRights"));
-    totalIncomeTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().tIncome()).asObject());
-    sellTickDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().sellTicketsDist()).asObject());  
-    sponDealsDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().sponDealsDist()).asObject());   
-    broadRightsDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().broadRightsDist()).asObject());   
+        yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
 
-             
-             
-   incList =FXCollections.observableArrayList();
-        
+        ticketsAmountTableColumn.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("sellingTickets"));
+        sponsorshipDealsAmountTableView.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("sponsorDeals"));
+        broadcastsRightsAmountTableColumn.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("broadcastsRights"));
+        totalIncomeTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().tIncome()).asObject());
+        sellTickDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().sellTicketsDist()).asObject());
+        sponDealsDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().sponDealsDist()).asObject());
+        broadRightsDistTableColumn.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().broadRightsDist()).asObject());
+
+        incList = FXCollections.observableArrayList();
+
     }
-    
-    
-    
-    
 
     @FXML
     private void totalIncomeButttonOnClick(ActionEvent event) {
-        
-        
-        //Integer selectedYear = yearIncComboBox.getSelectionModel().getSelectedItem();
 
-    // Check if a year is selected before proceeding
-    
-     
-         incomeManagement IncomeManagement = new incomeManagement(
-                        // Integer year = yearIncComboBox.getValue();
-                 Double.parseDouble(sellingTicketsTextArea.getText()),
+        //Integer selectedYear = yearIncComboBox.getSelectionModel().getSelectedItem();
+        // Check if a year is selected before proceeding
+        incomeManagement IncomeManagement = new incomeManagement(
+                // Integer year = yearIncComboBox.getValue();
+                Double.parseDouble(sellingTicketsTextArea.getText()),
                 Double.parseDouble(sponsorDealsTextArea.getText()),
                 Double.parseDouble(broadcastRightsTextArea.getText())
-              
-         );
-          
-          //caluculatdAmountTextArea.setText(Integer.valueOf(incomeManagement.getTotalIncome()));
-                 // caluculatdAmountTextArea.appendText(IncomeManagement.toString());
+        );
+
+        //caluculatdAmountTextArea.setText(Integer.valueOf(incomeManagement.getTotalIncome()));
+        // caluculatdAmountTextArea.appendText(IncomeManagement.toString());
         yearText.setText(String.valueOf(yearIncComboBox.getSelectionModel().getSelectedItem()));
-   
-    //detailsTextArea.appendText(IncomeManagement.toString());
-    
-    
-    calculateTableView.getItems().addAll(IncomeManagement);
-    
+
+        //detailsTextArea.appendText(IncomeManagement.toString());
+        calculateTableView.getItems().addAll(IncomeManagement);
+
     }
 
-
-   
-    
 }

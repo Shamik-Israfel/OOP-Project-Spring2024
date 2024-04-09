@@ -23,7 +23,7 @@ import javafx.scene.text.Text;
  *
  * @author hp
  */
-public class expensesTrackingSystemController implements Initializable{
+public class expensesTrackingSystemController implements Initializable {
 
     @FXML
     private TextField amountUsedForFoodAndWatersupplyTextField;
@@ -40,7 +40,7 @@ public class expensesTrackingSystemController implements Initializable{
     @FXML
     private TableView<expensesTrackingSystemModelclass> totalExpenseDetailsTableView;
     @FXML
-    private TableColumn<expensesTrackingSystemModelclass,Double> amountFoodandWatertableCol;
+    private TableColumn<expensesTrackingSystemModelclass, Double> amountFoodandWatertableCol;
     @FXML
     private TableColumn<expensesTrackingSystemModelclass, Double> amountKitExpendituretableCol;
     @FXML
@@ -50,7 +50,7 @@ public class expensesTrackingSystemController implements Initializable{
     @FXML
     private TableColumn<expensesTrackingSystemModelclass, Double> totalTableCol;
     @FXML
-    private TableColumn<expensesTrackingSystemModelclass,Double> averageExpenseTableCol;
+    private TableColumn<expensesTrackingSystemModelclass, Double> averageExpenseTableCol;
     @FXML
     private TableColumn<expensesTrackingSystemModelclass, Double> perFoodandWaterTableCol;
     @FXML
@@ -59,64 +59,39 @@ public class expensesTrackingSystemController implements Initializable{
     private TableColumn<expensesTrackingSystemModelclass, Double> perTrainingSessionTableCol;
     @FXML
     private TableColumn<expensesTrackingSystemModelclass, Double> perEmployeeSaalaryTableCol;
-private ObservableList<incomeManagement>  expList;
-    
+    private ObservableList<incomeManagement> expList;
+
     @Override
     public void initialize(URL url, ResourceBundle resources) {
-      YearExpComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021,2022,2023);
-      expList =FXCollections.observableArrayList();
-      
-      
-   amountFoodandWatertableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass,Double>("amountUsedForFoodAndWatersupply"));
-   amountKitExpendituretableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass,Double>("amountOfKitsExpenditure"));
-   amountTrainingSessionTableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass,Double>("amountForTraininigSession"));
-   amountEmployeeSalaryTableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass,Double>("amountUsedForTotalSalaries"));
-totalTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().TotAmountForExpenses()).asObject());
-averageExpenseTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().AvexpensesperCateg()).asObject());
-perFoodandWaterTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().PerOfExpFoodAndWaterSupply()).asObject());
-perKitExpenditureTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue(). PerOfExpByKitsExpenditure()).asObject());
-perTrainingSessionTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue(). PerOfExpByTraininigSession()).asObject());
-perEmployeeSaalaryTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue(). PerOfExpensesForToySal()).asObject());
-      
-      
-      
-      
-      
-      
-      
+        YearExpComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
+        expList = FXCollections.observableArrayList();
+
+        amountFoodandWatertableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass, Double>("amountUsedForFoodAndWatersupply"));
+        amountKitExpendituretableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass, Double>("amountOfKitsExpenditure"));
+        amountTrainingSessionTableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass, Double>("amountForTraininigSession"));
+        amountEmployeeSalaryTableCol.setCellValueFactory(new PropertyValueFactory<expensesTrackingSystemModelclass, Double>("amountUsedForTotalSalaries"));
+        totalTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().TotAmountForExpenses()).asObject());
+        averageExpenseTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().AvexpensesperCateg()).asObject());
+        perFoodandWaterTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().PerOfExpFoodAndWaterSupply()).asObject());
+        perKitExpenditureTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().PerOfExpByKitsExpenditure()).asObject());
+        perTrainingSessionTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().PerOfExpByTraininigSession()).asObject());
+        perEmployeeSaalaryTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().PerOfExpensesForToySal()).asObject());
+
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
     @FXML
     private void totalExpensesDetailsButtonOnClick(ActionEvent event) {
-        
-        expensesTrackingSystemModelclass ExpensesTrackingSystemModelclass =new  expensesTrackingSystemModelclass(
-        
-                
-   
-                
+
+        expensesTrackingSystemModelclass ExpensesTrackingSystemModelclass = new expensesTrackingSystemModelclass(
                 Double.parseDouble(amountUsedForFoodAndWatersupplyTextField.getText()),
                 Double.parseDouble(amountOfKitsExpenditureTextField.getText()),
                 Double.parseDouble(amountForTraininigSessionTextField.getText()),
-                Double.parseDouble(amountUsedForTotalSalariesTextField.getText())    
-                 );     
-                        
-                expTextArea.setText(String.valueOf(YearExpComboBox.getSelectionModel().getSelectedItem()));
-       
-       
-                
-                   totalExpenseDetailsTableView.getItems().addAll(ExpensesTrackingSystemModelclass);
+                Double.parseDouble(amountUsedForTotalSalariesTextField.getText())
+        );
+
+        expTextArea.setText(String.valueOf(YearExpComboBox.getSelectionModel().getSelectedItem()));
+
+        totalExpenseDetailsTableView.getItems().addAll(ExpensesTrackingSystemModelclass);
 
     }
 
@@ -124,6 +99,4 @@ perEmployeeSaalaryTableCol.setCellValueFactory(cellData -> new SimpleDoublePrope
     private void expGeneratePieChartButtonOnClick(ActionEvent event) {
     }
 
-    
-    
 }

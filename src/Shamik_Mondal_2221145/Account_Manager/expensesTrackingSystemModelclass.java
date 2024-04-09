@@ -16,7 +16,6 @@ public class expensesTrackingSystemModelclass implements Serializable {
     private double amountOfKitsExpenditure;
     private double amountForTraininigSession;
     private double amountUsedForTotalSalaries;
-    
 
     public expensesTrackingSystemModelclass(double amountUsedForFoodAndWatersupply, double amountOfKitsExpenditure, double amountForTraininigSession, double amountUsedForTotalSalaries) {
         this.amountUsedForFoodAndWatersupply = amountUsedForFoodAndWatersupply;
@@ -56,10 +55,6 @@ public class expensesTrackingSystemModelclass implements Serializable {
     public void setAmountUsedForTotalSalaries(double amountUsedForTotalSalaries) {
         this.amountUsedForTotalSalaries = amountUsedForTotalSalaries;
     }
-
-  
-
-    
 
     public double TotAmountForExpenses() {
         return amountUsedForFoodAndWatersupply + amountOfKitsExpenditure + amountForTraininigSession + amountUsedForTotalSalaries;
@@ -101,6 +96,4 @@ public class expensesTrackingSystemModelclass implements Serializable {
                 + "\n}";
     }
 
-
 }
-
