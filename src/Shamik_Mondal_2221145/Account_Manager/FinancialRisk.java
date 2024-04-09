@@ -13,13 +13,13 @@ import java.io.Serializable;
 public class FinancialRisk implements Serializable{
     private String riskName;
     private String description;
-    private double likelihood;
+    private double probability;
     private double impact;
 
-    public FinancialRisk(String riskName, String description, double likelihood, double impact) {
+    public FinancialRisk(String riskName, String description, double probability, double impact) {
         this.riskName = riskName;
         this.description = description;
-        this.likelihood = likelihood;
+        this.probability = probability;
         this.impact = impact;
     }
 
@@ -31,17 +31,19 @@ public class FinancialRisk implements Serializable{
         return description;
     }
 
-    public double getLikelihood() {
-        return likelihood;
+    public double getProbability() {
+        return probability;
     }
 
     public double getImpact() {
         return impact;
     }
+
+    
     
     @Override
     public String toString() {
-        return "FinancialRisk{" + "riskName=" + riskName + ", description=" + description + ", likelihood=" + likelihood + ", impact=" + impact + '}';
+        return "FinancialRisk{" + "riskName=" + riskName + ", description=" + description + ", probability=" + probability + ", impact=" + impact + '}';
     }
     
 }
