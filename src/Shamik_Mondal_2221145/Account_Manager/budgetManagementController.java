@@ -7,6 +7,8 @@ package Shamik_Mondal_2221145.Account_Manager;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleDoubleProperty;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -48,11 +50,14 @@ public class budgetManagementController implements Initializable{
     private TableColumn<budgetManagementModelClass, Double> percentTranspoBudTableCol;
     @FXML
     private TableColumn<budgetManagementModelClass, Double> perKitExpenditureTableCol;
-    
+    private ObservableList<budgetManagementModelClass> budList;
     @FXML
-    private ComboBox<String> budYearComboBox;
+    private ComboBox<Integer> yearComboBoxBud;
     @FXML
-    private Text yearTextBud;
+    private Text yearTxtBuds;
+
+ 
+
     
 
     
@@ -61,8 +66,10 @@ public class budgetManagementController implements Initializable{
     
     public void initialize(URL url, ResourceBundle resources) {
        
-        
-        
+        yearComboBoxBud.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
+      
+      
+
 budForAwayMatchTableCol.setCellValueFactory(new PropertyValueFactory<budgetManagementModelClass, Double>("approximateBudgetForAwayMatches"));
 budgetFoodAndWaterTableCol.setCellValueFactory(new PropertyValueFactory<budgetManagementModelClass, Double>("approximateBudgetForFoodAndWaterSupply"));
 budTransportationTableCol.setCellValueFactory(new PropertyValueFactory<budgetManagementModelClass, Double>("approximateBudgetForTransportation"));
@@ -73,7 +80,8 @@ percentFoodAndWaterTableCol.setCellValueFactory(cellData -> new SimpleDoubleProp
 percentTranspoBudTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().budpercentforTranspo()).asObject());
 perKitExpenditureTableCol.setCellValueFactory(cellData -> new SimpleDoubleProperty(cellData.getValue().budpercentforKitAndExpend()).asObject());
     
-        
+              budList = FXCollections.observableArrayList();
+  
         
         
         
@@ -95,14 +103,33 @@ perKitExpenditureTableCol.setCellValueFactory(cellData -> new SimpleDoubleProper
     
     }
 
-    @FXML
-    private void budDetaisButtonOnClick(ActionEvent event) {
-    }
+    
+        
+        
+   
 
     @FXML
     private void budBarChartButtonOnClick(ActionEvent event) {
     }
 
+   @FXML
+    private void budDetaisButtonOnClick(ActionEvent event) {
+        budgetManagementModelClass BudgetManagementModelClass = new budgetManagementModelClass(
+                 Double.parseDouble(budgetForAwayMatchesTextField.getText()),
+                 Double.parseDouble(budgetForFoodAndWaterTextField.getText()),
+                 Double.parseDouble(budgetForTransportationTextField.getText()),
+                 Double.parseDouble(budgetFotKitExpenTextField.getText())
+
+                         
+                         
+                ); 
+    
+            budgetTableVIew.getItems().addAll(BudgetManagementModelClass);
+
+            yearTxtBuds.setText(String.valueOf(yearComboBoxBud.getSelectionModel().getSelectedItem()));
+
     
     
-}
+    
+    }
+} 

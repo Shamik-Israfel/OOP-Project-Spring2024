@@ -59,7 +59,7 @@ public class incomeManagementController implements Initializable {
     private TableColumn<incomeManagement, Double> broadRightsDistTableColumn;
 
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+public void initialize(URL location, ResourceBundle resources) {
         yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
 
         ticketsAmountTableColumn.setCellValueFactory(new PropertyValueFactory<incomeManagement, Double>("sellingTickets"));

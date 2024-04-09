@@ -64,15 +64,20 @@
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Button>
-      <ComboBox fx:id="budYearComboBox" layoutX="1128.0" layoutY="33.0" prefHeight="31.0" prefWidth="209.0" promptText="Select The Year Budget" />
-      <Label layoutX="846.0" layoutY="122.0" prefHeight="22.0" prefWidth="291.0" text="Approximate Budget For The Year OF:">
+      <Label layoutX="846.0" layoutY="122.0" prefHeight="22.0" prefWidth="155.0">
          <font>
             <Font name="Calibri Bold" size="18.0" />
          </font>
       </Label>
-      <Text fx:id="yearTextBud" layoutX="1137.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TBA" wrappingWidth="77.6708984375">
+      <ComboBox fx:id="yearComboBoxBud" layoutX="1136.0" layoutY="33.0" prefHeight="31.0" prefWidth="177.0" promptText="SELECT THE YEAR" />
+      <Label layoutX="846.0" layoutY="122.0" text="Budget of the year:">
          <font>
-            <Font name="Calibri Bold" size="22.0" />
+            <Font name="Calibri Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="yearTxtBuds" layoutX="1003.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TBA" wrappingWidth="51.6708984375">
+         <font>
+            <Font name="Calibri" size="24.0" />
          </font>
       </Text>
    </children>

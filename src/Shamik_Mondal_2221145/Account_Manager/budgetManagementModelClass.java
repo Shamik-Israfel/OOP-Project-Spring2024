@@ -9,16 +9,16 @@ package Shamik_Mondal_2221145.Account_Manager;
  * @author hp
  */
 public class budgetManagementModelClass {
-    private double approximateBudgetForAwayMatches;
-    private double approximateBudgetForTransportation ;
-    private double approximateBudgetForFoodAndWaterSupply; 
-    private double approximateBudgetForKitExpenditure;
+   private double approximateBudgetForAwayMatches;
+   private double approximateBudgetForFoodAndWaterSupply; 
+   private double approximateBudgetForTransportation ;
+   private double approximateBudgetForKitExpenditure;
 
-    public budgetManagementModelClass(double approximateBudgetForAwayMatches, double approximateBudgetForTransportation, double approximateBudgetForAndWaterSupply, double approximateBudgetForKitAndWaterSupply) {
+    public budgetManagementModelClass(double approximateBudgetForAwayMatches, double approximateBudgetForFoodAndWaterSupply, double approximateBudgetForTransportation, double approximateBudgetForKitExpenditure) {
         this.approximateBudgetForAwayMatches = approximateBudgetForAwayMatches;
+        this.approximateBudgetForFoodAndWaterSupply = approximateBudgetForFoodAndWaterSupply;
         this.approximateBudgetForTransportation = approximateBudgetForTransportation;
-        this.approximateBudgetForFoodAndWaterSupply = approximateBudgetForAndWaterSupply;
-        this.approximateBudgetForKitExpenditure = approximateBudgetForKitAndWaterSupply;
+        this.approximateBudgetForKitExpenditure = approximateBudgetForKitExpenditure;
     }
 
     public double getApproximateBudgetForAwayMatches() {
@@ -29,6 +29,14 @@ public class budgetManagementModelClass {
         this.approximateBudgetForAwayMatches = approximateBudgetForAwayMatches;
     }
 
+    public double getApproximateBudgetForFoodAndWaterSupply() {
+        return approximateBudgetForFoodAndWaterSupply;
+    }
+
+    public void setApproximateBudgetForFoodAndWaterSupply(double approximateBudgetForFoodAndWaterSupply) {
+        this.approximateBudgetForFoodAndWaterSupply = approximateBudgetForFoodAndWaterSupply;
+    }
+
     public double getApproximateBudgetForTransportation() {
         return approximateBudgetForTransportation;
     }
@@ -37,22 +45,15 @@ public class budgetManagementModelClass {
         this.approximateBudgetForTransportation = approximateBudgetForTransportation;
     }
 
-    public double getapproximateBudgetForFoodAndWaterSupply() {
-        return approximateBudgetForFoodAndWaterSupply;
-    }
-
-    public void setApproximateBudgetForAndWaterSupply(double approximateBudgetForFAndWaterSupply) {
-        this.approximateBudgetForFoodAndWaterSupply = approximateBudgetForFoodAndWaterSupply;
-    }
-
-    public double getapproximateBudgetForKitExpenditure() {
+    public double getApproximateBudgetForKitExpenditure() {
         return approximateBudgetForKitExpenditure;
     }
 
-    public void setApproximateBudgetForKitAndWaterSupply(double approximateBudgetForKitExpenditure) {
+    public void setApproximateBudgetForKitExpenditure(double approximateBudgetForKitExpenditure) {
         this.approximateBudgetForKitExpenditure = approximateBudgetForKitExpenditure;
     }
 
+    
 
     public double totalBudget(){
     return(approximateBudgetForAwayMatches+approximateBudgetForTransportation+approximateBudgetForFoodAndWaterSupply+approximateBudgetForKitExpenditure);    
@@ -82,8 +83,8 @@ public class budgetManagementModelClass {
 public String toString() {
     return "budgetManagementModelClass{" + 
            "\n\tapproximateBudgetForAwayMatches=" + approximateBudgetForAwayMatches + 
-           ", \n\tapproximateBudgetForTransportation=" + approximateBudgetForTransportation + 
            ", \n\tapproximateBudgetForFoodAndWaterSupply=" + approximateBudgetForFoodAndWaterSupply + 
+           ", \n\tapproximateBudgetForTransportation=" + approximateBudgetForTransportation + 
            ", \n\tapproximateBudgetForKitExpenditure=" + approximateBudgetForKitExpenditure + 
             "Total Budget: " + totalBudget() + "\n" +
            "Percentage Budget for Away Matches: " + budpercentforAwayMatches() + "%\n" +
