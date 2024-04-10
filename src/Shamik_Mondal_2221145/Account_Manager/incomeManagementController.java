@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -57,7 +58,7 @@ public class incomeManagementController implements Initializable {
     private TableColumn<incomeManagement, Double> sponDealsDistTableColumn;
     @FXML
     private TableColumn<incomeManagement, Double> broadRightsDistTableColumn;
-
+    
     @Override
 public void initialize(URL location, ResourceBundle resources) {
         yearIncComboBox.getItems().addAll(2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023);
@@ -90,9 +91,21 @@ public void initialize(URL location, ResourceBundle resources) {
         // caluculatdAmountTextArea.appendText(IncomeManagement.toString());
         yearText.setText(String.valueOf(yearIncComboBox.getSelectionModel().getSelectedItem()));
 
-        //detailsTextArea.appendText(IncomeManagement.toString());
-        calculateTableView.getItems().addAll(IncomeManagement);
+        ReadWrite.writeObjectToFile("Income.bin", IncomeManagement);
+        //calculateTableView.getItems().addAll(IncomeManagement);
+calculateTableView.getItems().clear(); // Clear existing items
+calculateTableView.getItems().add(IncomeManagement); // Add the new item
+    }
 
+    @FXML
+    private void incShowPreviousDataButtonOnClick(ActionEvent event) {
+       
+        incomeManagement DummyIncome =new incomeManagement(0,0,0);
+             ObservableList<incomeManagement> incList = (ObservableList<incomeManagement>) ReadWrite.readObjectToFile("Income.bin", DummyIncome);
+         calculateTableView.setItems(incList ); // Set items to TableView
+
+        
+                
     }
 
 }

@@ -63,5 +63,10 @@
             <TableColumn fx:id="broadRightsDistTableColumn" minWidth="0.0" prefWidth="184.0" text="broadRightsDistribution" />
         </columns>
       </TableView>
+      <Button layoutX="722.0" layoutY="19.0" mnemonicParsing="false" onAction="#incShowPreviousDataButtonOnClick" prefHeight="48.0" prefWidth="202.0" text="Show Previous Data" wrapText="true">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

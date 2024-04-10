@@ -4,8 +4,13 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.GenerateAlerts;
+import Shamik_Mondal_2221145.ReadWrite;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,7 +19,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-
 /**
  *
  * @author hp
@@ -50,6 +54,7 @@ public class LeaveRequestController implements Initializable {
         leaveDaysTableColumn.setCellValueFactory(new PropertyValueFactory<HRLeaveModel, Integer>("selectdays"));
         
         HRLeaveModel dummyIns = new HRLeaveModel("","","",0,0); 
+        reqlist = (ObservableList<HRLeaveModel>) ReadWrite.readObjectToFile("ApplyLeave.bin", dummyIns);
         
         leaveRequestsTableView.getItems().addAll(reqlist);
         
@@ -66,10 +71,59 @@ public class LeaveRequestController implements Initializable {
     
     @FXML
     private void acceptButtonOnClicked(ActionEvent event) {
+       try { 
+            if ( leaveRequestsTableView.getSelectionModel().getSelectedItem() == null ){
+                throw new RuntimeException("Table Selection cannot be empty.");
+            }
+            for ( HRLeaveModel leaveReqData : reqlist ) {
+                if(leaveReqData.equals(reqlist.get(0))){
+                    ReadWrite.overWriteObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }
+                else if ( leaveReqData == leaveRequestsTableView.getSelectionModel().getSelectedItem() ){
+                    leaveReqData.setPermissionStatus("Accepted");
+                   ReadWrite.writeObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }
+                else{
+                    ReadWrite.writeObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }
+            }
+            
+            refreshTable();
+        }
+        catch (RuntimeException e){
+            GenerateAlerts.unsuccessfulAlert(e.toString());
+        }
+        
     }
-
     @FXML
     private void rejectButtonOnClicked(ActionEvent event) {
+         try { 
+            if ( leaveRequestsTableView.getSelectionModel().getSelectedItem() == null ){
+                throw new RuntimeException("Table Selection cannot be empty.");
+            }
+            for ( HRLeaveModel leaveReqData : reqlist ) {
+                 if(leaveReqData.equals(reqlist.get(0))){
+                    ReadWrite.overWriteObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }
+                else if ( leaveReqData == leaveRequestsTableView.getSelectionModel().getSelectedItem() ){
+                    leaveReqData.setPermissionStatus("Rejected");
+                    ReadWrite.writeObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }
+                 else{
+                    ReadWrite.writeObjectToFile("ApplyLeave.bin", leaveReqData);
+                    //System.out.println(leaveReqData);
+                }   
+            }
+    refreshTable();
+        }
+        catch (RuntimeException e){
+            GenerateAlerts.unsuccessfulAlert(e.toString());
+        }
     }
 
     @FXML
@@ -79,3 +133,4 @@ public class LeaveRequestController implements Initializable {
 
    
 }
+    

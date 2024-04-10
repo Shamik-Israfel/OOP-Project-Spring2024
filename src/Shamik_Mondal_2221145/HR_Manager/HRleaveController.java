@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -45,6 +46,8 @@ public class HRleaveController implements Initializable{
         String stat = "Pending";
         
         HRLeaveModel leave = new HRLeaveModel(name,dept,stat,code,days);
+                ReadWrite.writeObjectToFile("ApplyLeave.bin", leave);
+
         statusTextField.setText("Pending");
     }
 

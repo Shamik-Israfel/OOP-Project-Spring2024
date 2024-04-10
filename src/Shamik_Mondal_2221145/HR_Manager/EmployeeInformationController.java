@@ -7,6 +7,7 @@ package Shamik_Mondal_2221145.HR_Manager;
 import Shamik_Mondal_2221145.ReadWrite;
 import Shamik_Mondal_2221145.ReadWrite;
 import Shamik_Mondal_2221145.Employee;
+import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -55,9 +56,9 @@ public class EmployeeInformationController implements Initializable {
     @FXML
     private TableColumn<Employee, Integer> codeTableColoum;
     @FXML
-    private TableColumn<Employee,String> nameTableColoum;
+    private TableColumn<Employee, String> nameTableColoum;
     @FXML
-    private TableColumn<Employee,String> departmentTableColoum;
+    private TableColumn<Employee, String> departmentTableColoum;
     @FXML
     private TableColumn<Employee, Long> contactTableColoum;
     @FXML
@@ -65,16 +66,16 @@ public class EmployeeInformationController implements Initializable {
     @FXML
     private TableColumn<Employee, LocalDate> dateofJoiningTableColoum;
     @FXML
-    private TableColumn<Employee,String> addressTableColumn;
+    private TableColumn<Employee, String> addressTableColumn;
     @FXML
-    private TableColumn<Employee,String> emailTableColumn;
+    private TableColumn<Employee, String> emailTableColumn;
     private ToggleGroup tg;
     private ObservableList<Employee> emp;
     private ObservableList<Employee> empList;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      tg = new ToggleGroup();
+        tg = new ToggleGroup();
         maleRadioButton.setToggleGroup(tg);
         femaleRadioButton.setToggleGroup(tg);
         emp = FXCollections.observableArrayList();
@@ -88,13 +89,13 @@ public class EmployeeInformationController implements Initializable {
         dateofBirthTableColoum.setCellValueFactory(new PropertyValueFactory<Employee, LocalDate>("dateOfBirth"));
         dateofJoiningTableColoum.setCellValueFactory(new PropertyValueFactory<Employee, LocalDate>("dateOfJoining"));
         addressTableColumn.setCellValueFactory(new PropertyValueFactory<Employee, String>("address"));
-        emailTableColumn.setCellValueFactory(new PropertyValueFactory<Employee, String>("email"));          
+        emailTableColumn.setCellValueFactory(new PropertyValueFactory<Employee, String>("email"));
 
     }
 
     @FXML
     private void addEmployeeButtonOnClicked(ActionEvent event) {
-         String name = nameTextField.getText();
+        String name = nameTextField.getText();
         int code = Integer.parseInt(employeeCodeTextField.getText());
         String address = addressTextField.getText();
         Long contact = Long.parseLong(contactTextField.getText());
@@ -106,43 +107,39 @@ public class EmployeeInformationController implements Initializable {
         if (maleRadioButton.isSelected()) {
             gender = "Male";
         } else if (femaleRadioButton.isSelected()) {
-            gender = "Female";
-        Employee emplo = new Employee(code, dept, address, Doj, name, gender, email, "Employee", "password", Dob, contact);    
-         emp.add(emplo);
+            gender = "Female"; }
+            Employee emplo = new Employee(code, dept, address, Doj, name, gender, email, "Employee", "password", Dob, contact);
+            emp.add(emplo);
 
-        ReadWrite.writeObjectToFile("EmployeeINFO", emplo);
+            ReadWrite.writeObjectToFile("EmployeeINFO", emplo);
+//empInfoTableView.getItems().add(emplo);
+            nameTextField.clear();
+            employeeCodeTextField.clear();
+            addressTextField.clear();
+            contactTextField.clear();
+            emailTextField.clear();
+            departmentCombobox.setValue(null);
+            dateOfBirth.setValue(null);
+            dateOfJoining.setValue(null);
+            tg.getSelectedToggle().setSelected(false);
 
-        nameTextField.clear();
-        employeeCodeTextField.clear();
-        addressTextField.clear();
-        contactTextField.clear();
-        emailTextField.clear();
-        departmentCombobox.setValue(null);
-        dateOfBirth.setValue(null);
-        dateOfJoining.setValue(null);
-        tg.getSelectedToggle().setSelected(false);
-        
-        }
-        
+       
+
     }
-
 
     @FXML
-    private void showInformationButtonOnClicked(ActionEvent event) {
-         
-Employee dummyemployeeinfo = new Employee(0, "", "", LocalDate.of(2023, 02, 02), "", "", "", "", "", LocalDate.of(2023, 02, 02), 0L);
+    private void showInformationButtonOnClicked(ActionEvent event) throws IOException {
+
+        Employee dummyemployeeinfo = new Employee(0, "", "", LocalDate.of(2023, 02, 02), "", "", "", "", "", LocalDate.of(2023, 02, 02), 0L);
         ObservableList<Employee> empList = (ObservableList<Employee>) ReadWrite.readObjectToFile("EmployeeINFO", dummyemployeeinfo);
 
-        empInfoTableView.getItems().addAll(empList);
-         
+        //empInfoTableView.getItems().addAll(empList);
+         empInfoTableView.setItems(empList); // Set items to TableView
 
     }
-
-        
-    
 
     @FXML
     private void downloadPdfButtonOnClicked(ActionEvent event) {
     }
-    
+
 }

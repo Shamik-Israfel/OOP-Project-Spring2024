@@ -4,9 +4,11 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,6 +37,7 @@ public class PaySalariesController implements Initializable {
     @FXML
     private ComboBox<String> departmentCombobox;
     private ArrayList<PaySalariesModelClass> payList;
+    private ObservableList<PaySalariesModelClass> ppayList;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -56,6 +59,11 @@ public class PaySalariesController implements Initializable {
         long sal = Long.parseLong(salaryTextField.getText());
         PaySalariesModelClass pay = new PaySalariesModelClass(year, sal, mon, code, dept, "address", null, name, "gender", "email", "Employee", "password", null, 0);
         payList.add(pay);
+        
+        
+                ObservableList<PaySalariesModelClass> ppayList = (ObservableList<PaySalariesModelClass>) ReadWrite.readObjectToFile("EmployeeINFO", pay);
+
+        
         checkStatusTextArea.setText("PAID");
 
         nameTextField.clear();

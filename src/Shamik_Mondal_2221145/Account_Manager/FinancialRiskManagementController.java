@@ -6,6 +6,7 @@ package Shamik_Mondal_2221145.Account_Manager;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -28,6 +29,7 @@ public class FinancialRiskManagementController implements Initializable{
     private ComboBox<Double> impactComboBox;
     @FXML
     private TextArea riskTextArea;
+   // private ObservableList<FinancialRisk> FRList;
 
      @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -83,7 +85,8 @@ public class FinancialRiskManagementController implements Initializable{
 
         
               FinancialRisk risk = new FinancialRisk(riskName, description, probability, impact);
-  
+        //  ObservableList<FinancialRisk> empList = (ObservableList<FinancialRisk>) ReadWrite.readObjectToFile("EmployeeINFO", risk);
+
         
         String riskAnalysisReport = "Risk: " + riskName +
                                     "\nDescription: " + description +

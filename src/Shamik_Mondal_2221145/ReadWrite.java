@@ -4,8 +4,12 @@
  */
 package Shamik_Mondal_2221145;
 
+import Shamik_Mondal_2221145.Account_Manager.incomeManagement;
+import Shamik_Mondal_2221145.HR_Manager.PaySalariesModelClass;
 import Shamik_Mondal_2221145.HR_Manager.timeAttendanceModel;
 import Shamik_Mondal_2221145.HR_Manager.timePerformanceModel;
+import Shamik_Mondal_2221145.HR_Manager.HRLeaveModel ;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -68,7 +72,20 @@ public class ReadWrite {
         ObservableList<SignupData> SData = FXCollections.observableArrayList();
         ObservableList<timeAttendanceModel> AttendanceData = FXCollections.observableArrayList();
         ObservableList<timePerformanceModel> PerformanceData = FXCollections.observableArrayList();
+        ObservableList<Employee> employeeinfoData = FXCollections.observableArrayList();
+        ObservableList<PaySalariesModelClass> PaySalariesinfoData = FXCollections.observableArrayList();
+        ObservableList<incomeManagement> IncomeinfoData= FXCollections.observableArrayList();
+        ObservableList<HRLeaveModel> leaveData = FXCollections.observableArrayList();
 
+          
+          
+          
+          
+          
+          
+          
+          
+          
         try {
             if (instance instanceof SignupData) {
                 f = new File(fileName);
@@ -94,7 +111,8 @@ public class ReadWrite {
                     System.out.println("Shamik attendance exe");
                 }
                 //  System.out.println("Meraj");               
-            } else if (instance instanceof timePerformanceModel) {
+            } 
+            else if (instance instanceof timePerformanceModel) {
                 f = new File(fileName);
                 fw = new FileInputStream(f);
                 ois = new ObjectInputStream(fw);
@@ -102,11 +120,116 @@ public class ReadWrite {
                     while (true) {
                         PerformanceData.add((timePerformanceModel) ois.readObject());
                     }
-                } catch (Exception e) {
+                }catch (Exception e) {
                     System.out.println("Shamik Performance exe");
 
                 }
             }
+            
+            else if (instance instanceof Employee) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       employeeinfoData.add((Employee) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik employeeinfo exe");
+
+                }
+            }
+            
+            
+            
+            
+            else if (instance instanceof PaySalariesModelClass) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       PaySalariesinfoData.add((PaySalariesModelClass) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik PaySalariesinfo exe");
+
+                }
+            }
+            
+            
+            
+            else if (instance instanceof incomeManagement) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       IncomeinfoData.add((incomeManagement) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik Incomeinfo exe");
+
+                }
+            }
+            
+            
+            
+             else if (instance instanceof HRLeaveModel) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       leaveData.add((HRLeaveModel) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik HrLeaveinfo exe");
+
+                }
+            }
+            
+            
+            
+            
+            
+     
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
         }
                 catch (Exception e) {
                     System.out.println("Astronut File");
@@ -120,13 +243,67 @@ public class ReadWrite {
                     }
                 }
 
-                if (instance instanceof timeAttendanceModel) {
-                    return AttendanceData;
-                } else if (instance instanceof timePerformanceModel) {
-                    return PerformanceData;
-                }
+                if (instance instanceof timeAttendanceModel)return AttendanceData;
+                else if (instance instanceof timePerformanceModel) return PerformanceData;
+                else if ( instance instanceof Employee ) return employeeinfoData;
+                else if ( instance instanceof PaySalariesModelClass ) return PaySalariesinfoData;
+                else if ( instance instanceof incomeManagement ) return IncomeinfoData;
+                else if ( instance instanceof HRLeaveModel ) return leaveData;
 
                 return SData;
             }
 
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     public static <T> Boolean overWriteObjectToFile(String fileName, T instance){
+        ObjectOutputStream oos = null;
+        FileOutputStream fos = null;
+        File f = null;
+        try{
+            f = new File(fileName);
+            if (f.exists() ){
+                fos = new FileOutputStream(f);
+                oos = new ObjectOutputStream(fos);
+            }
+            try {
+                oos.writeObject(instance);
+                oos.close();
+                return true;
+            }
+            catch(IOException ex){
+                GenerateAlerts.unsuccessfulAlert("Error while writing the File." + "\n" +
+                                                "Please Check your Storage Efficiency, File type and name.");
+            }
         }
+        catch (Exception e){
+            GenerateAlerts.unsuccessfulAlert("Data is Vulnerable." + "\n" + "Please try again rechecking your data" + 
+                                                "If you can't solve the issue. Contact Software maintainer.");
+        }
+        finally {
+            try{
+                if ( oos != null){
+                    oos.close();
+                }
+            }
+            catch (IOException ex){
+                GenerateAlerts.unsuccessfulAlert("Error while closing the Binary File.");
+                return false;
+            }
+        } 
+        return false;
+        
+    }
+    
+    
+    }

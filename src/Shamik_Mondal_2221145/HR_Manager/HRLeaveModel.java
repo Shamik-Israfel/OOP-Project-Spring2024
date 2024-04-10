@@ -10,7 +10,7 @@ import java.io.Serializable;
  *
  * @author hp
  */
-class HRLeaveModel implements Serializable{
+public class HRLeaveModel implements Serializable{
     protected String name, department, status;
     protected int employeecode, selectdays;
 
