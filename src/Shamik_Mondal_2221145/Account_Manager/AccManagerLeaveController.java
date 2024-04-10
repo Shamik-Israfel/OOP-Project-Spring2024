@@ -20,26 +20,38 @@ import javafx.scene.control.TextField;
 public class AccManagerLeaveController implements Initializable {
 
     @FXML
-    private TextField statusTextField;
+    private TextField accManStatusTextField;
     @FXML
-    private ComboBox<?> daysCombobox;
+    private ComboBox<Integer> accManDaysCombobox;
     @FXML
-    private TextField nameTextField;
+    private TextField accManNameTextField;
     @FXML
-    private ComboBox<?> departmentCombobox;
+    private ComboBox<String> accManDepartmentCombobox;
     @FXML
-    private TextField codeTextField;
+    private TextField accManCodeTextField;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        accManDaysCombobox.getItems().addAll(1,2,3,4,5,6,7,14,30);
+       accManDepartmentCombobox.getItems().addAll("Accounts", "President", "Human Resource", "Coach"); 
     }    
 
     @FXML
-    private void applyLeaveButtonOnClicked(ActionEvent event) {
+    private void accManApplyLeaveButtonOnClicked(ActionEvent event) {
+        
+        int days =  accManDaysCombobox.getValue();
+        String name =accManNameTextField.getText();
+        int code = Integer.parseInt(accManCodeTextField.getText());
+        String dept = accManDepartmentCombobox.getValue();
+        String stat = "Pending";
+        
+        AccManagerLeave accleave = new AccManagerLeave(name,dept,stat,code,days);
+        accManStatusTextField.setText("Pending");
+        
+        
     }
     
 }
