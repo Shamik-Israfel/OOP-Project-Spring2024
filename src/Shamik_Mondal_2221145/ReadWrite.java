@@ -9,6 +9,8 @@ import Shamik_Mondal_2221145.HR_Manager.PaySalariesModelClass;
 import Shamik_Mondal_2221145.HR_Manager.timeAttendanceModel;
 import Shamik_Mondal_2221145.HR_Manager.timePerformanceModel;
 import Shamik_Mondal_2221145.HR_Manager.HRLeaveModel ;
+import Shamik_Mondal_2221145.HR_Manager.jobRecruitModel;
+import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -76,6 +78,8 @@ public class ReadWrite {
         ObservableList<PaySalariesModelClass> PaySalariesinfoData = FXCollections.observableArrayList();
         ObservableList<incomeManagement> IncomeinfoData= FXCollections.observableArrayList();
         ObservableList<HRLeaveModel> leaveData = FXCollections.observableArrayList();
+        ObservableList<jobRecruitModel> recruitData = FXCollections.observableArrayList();
+        ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
 
           
           
@@ -190,6 +194,48 @@ public class ReadWrite {
             }
             
             
+        else if (instance instanceof jobRecruitModel) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       recruitData.add((jobRecruitModel) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik HrRecruitinfo exe");
+
+                }
+            }     
+        
+            
+            
+           else if (instance instanceof trainingModelClass) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                       tmcData.add((trainingModelClass) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik trainingwork exe");
+
+                }
+            }      
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -249,6 +295,8 @@ public class ReadWrite {
                 else if ( instance instanceof PaySalariesModelClass ) return PaySalariesinfoData;
                 else if ( instance instanceof incomeManagement ) return IncomeinfoData;
                 else if ( instance instanceof HRLeaveModel ) return leaveData;
+                else if ( instance instanceof jobRecruitModel ) return recruitData;
+                else if ( instance instanceof trainingModelClass ) return tmcData;
 
                 return SData;
             }

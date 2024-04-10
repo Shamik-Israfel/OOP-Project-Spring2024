@@ -6,7 +6,7 @@ package Shamik_Mondal_2221145.HR_Manager;
 
 import java.io.Serializable;
 
- class jobRecruitModel implements Serializable {
+public class jobRecruitModel implements Serializable {
     protected String department, description,requirement;
     protected long salary;
 

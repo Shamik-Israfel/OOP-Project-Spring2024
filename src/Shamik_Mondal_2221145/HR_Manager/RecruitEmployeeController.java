@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -46,6 +47,7 @@ public class RecruitEmployeeController implements Initializable{
     @FXML
     private void showPostButtonOnClicked(ActionEvent event) {
            jobRecruitModel dummyrecruit = new jobRecruitModel("","","",0L);
+        ObservableList<jobRecruitModel> readrecList= (ObservableList<jobRecruitModel>) ReadWrite.readObjectToFile("Recruit.bin", dummyrecruit);
 
         String add = "";
         for (jobRecruitModel r : readrecList) {
@@ -67,7 +69,8 @@ public class RecruitEmployeeController implements Initializable{
         jobRecruitModel recruit = new jobRecruitModel(dept,desc,req, salary);
         recList.add(recruit);
         
-        
+                ReadWrite.writeObjectToFile("Recruit.bin", recruit);
+
           descriptionTextField.clear();
         requirementTextField.clear();
         salaryRangeTextField.clear();

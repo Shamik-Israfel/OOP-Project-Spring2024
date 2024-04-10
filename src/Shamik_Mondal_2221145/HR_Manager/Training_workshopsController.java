@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -42,13 +43,13 @@ public class Training_workshopsController implements Initializable {
     @FXML
     private ComboBox<String> amPmComboBox;
     @FXML
-    private TableView<traineeModelClass> employeeListTableView;
+    private TableView<trainingModelClass> employeeListTableView;
     @FXML
-    private TableColumn<traineeModelClass, String> employeeNameTableColumn;
+    private TableColumn<trainingModelClass, String> employeeNameTableColumn;
     @FXML
-    private TableColumn<traineeModelClass, Integer> employeeCodeTableColumn;
+    private TableColumn<trainingModelClass, Integer> employeeCodeTableColumn;
     
-    private ObservableList<traineeModelClass> twlist;
+    private ObservableList<trainingModelClass> twlist;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -64,8 +65,10 @@ public class Training_workshopsController implements Initializable {
         String n = nameTextField.getText();
         int c = Integer.parseInt(codeTextField.getText());
 
-        traineeModelClass tList = new traineeModelClass(n, c);
+        trainingModelClass tList = new trainingModelClass(n, c);
         twlist.add(tList);
+                ReadWrite.writeObjectToFile("TrainingData.bin", tList);
+
         employeeListTableView.setItems(twlist); 
 
         nameTextField.clear();
@@ -75,6 +78,12 @@ public class Training_workshopsController implements Initializable {
 
     @FXML
     private void showDetailsButtonOnClicked(ActionEvent event) {
+        trainingModelClass empList = new trainingModelClass("", 0);
+        ObservableList<trainingModelClass> worklist = (ObservableList<trainingModelClass>) ReadWrite.readObjectToFile("TrainingData.bin", empList);
+        for (trainingModelClass z : worklist) {
+            detailsTextArea.appendText(z.toString2() + "\n");
+            // System.out.println(z.toString());
+        }
     }
 
     @FXML
