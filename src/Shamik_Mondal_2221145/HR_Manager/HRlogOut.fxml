@@ -6,7 +6,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="174.0" prefWidth="357.0" style="-fx-background-color: #5F8575;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.HR_Manager.HRlogOutController">
    <children>
-      <Button layoutX="98.0" layoutY="64.0" mnemonicParsing="false" onAction="#AccLogOutButtonOnClick" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: red;" text="Log Out">
+      <Button layoutX="98.0" layoutY="64.0" mnemonicParsing="false" onAction="#HrLogOutButtonOnClick" prefHeight="31.0" prefWidth="162.0" style="-fx-background-color: red;" text="Log Out">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
