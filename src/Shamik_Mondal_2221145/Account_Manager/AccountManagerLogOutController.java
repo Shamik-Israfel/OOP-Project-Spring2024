@@ -4,10 +4,17 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+
 /**
  *
  * @author hp
  */
 public class AccountManagerLogOutController {
+
+    @FXML
+    private void HrLogOutButtonOnClick(ActionEvent event) {
+    }
     
 }
