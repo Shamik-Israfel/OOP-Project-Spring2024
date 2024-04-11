@@ -47,31 +47,77 @@ public class Account_Manager_DashboardController implements Initializable {
     }
 
     @FXML
-    private void financialRiskManagementMenuItemOnClick(ActionEvent event) {
+    private void financialRiskManagementMenuItemOnClick(ActionEvent event) throws IOException {
+         Parent fileChooserViewParent = FXMLLoader.load(getClass().getResource("FinancialRiskManagement.fxml"));
+        Scene fileChooserViewScene = new Scene(fileChooserViewParent);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Financial Risk Management");
+        newWindow.setScene(fileChooserViewScene);
+        newWindow.show();
     }
 
     @FXML
-    private void budgetManagementMenuItemOnClick(ActionEvent event) {
+    private void budgetManagementMenuItemOnClick(ActionEvent event) throws IOException {
+        Parent fileChooserViewParent = FXMLLoader.load(getClass().getResource("budgetManagement.fxml"));
+        Scene fileChooserViewScene = new Scene(fileChooserViewParent);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Budget Management");
+        newWindow.setScene(fileChooserViewScene);
+        newWindow.show();
     }
 
     @FXML
-    private void incomeManagementMenuItemOnClick(ActionEvent event) {
+    private void incomeManagementMenuItemOnClick(ActionEvent event) throws IOException {
+        Parent fileChooserViewParent = FXMLLoader.load(getClass().getResource("IncomeManagement.fxml"));
+        Scene fileChooserViewScene = new Scene(fileChooserViewParent);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Budget Management");
+        newWindow.setScene(fileChooserViewScene);
+        newWindow.show();
     }
 
     @FXML
-    private void expenseTrackingSystemMenuItemOnClick(ActionEvent event) {
+    private void expenseTrackingSystemMenuItemOnClick(ActionEvent event) throws IOException {
+     Parent fileChooserViewParent = FXMLLoader.load(getClass().getResource("expensesTrackingSystem.fxml"));
+        Scene fileChooserViewScene = new Scene(fileChooserViewParent);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Expenses Tracking System");
+        newWindow.setScene(fileChooserViewScene);
+        newWindow.show();
+   
+        
     }
 
     @FXML
-    private void employeeSalaryCalculatorMenuItemOnClick(ActionEvent event) {
+    private void employeeSalaryCalculatorMenuItemOnClick(ActionEvent event) throws IOException {
+        Parent fileChooserViewParent = FXMLLoader.load(getClass().getResource("employeeSalaryCalculator.fxml"));
+        Scene fileChooserViewScene = new Scene(fileChooserViewParent);
+        //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage newWindow = new Stage();
+
+        newWindow.setTitle("Employee Salary Calculator");
+        newWindow.setScene(fileChooserViewScene);
+        newWindow.show();
     }
 
     @FXML
-    private void accApplyForLeaveMenuItemOnClick(ActionEvent event) {
+    private void accApplyForLeaveMenuItemOnClick(ActionEvent event) throws IOException {
+        Parent parent = FXMLLoader.load(getClass().getResource("AccManagerLeave.fxml"));
+        accBorderpaneId.setRight(parent);
     }
 
     @FXML
-    private void accLogOutMenuItemClick(ActionEvent event) {
+    private void accLogOutMenuItemClick(ActionEvent event) throws IOException {
+          Parent parent = FXMLLoader.load(getClass().getResource("AccManagerLogOut.fxml"));
+        accBorderpaneId.setBottom(parent);
     }
     
 }
