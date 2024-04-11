@@ -12,6 +12,15 @@ import Shamik_Mondal_2221145.HR_Manager.HRLeaveModel ;
 import Shamik_Mondal_2221145.HR_Manager.jobRecruitModel;
 import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
 
+
+
+
+
+
+
+
+
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -80,7 +89,6 @@ public class ReadWrite {
         ObservableList<HRLeaveModel> leaveData = FXCollections.observableArrayList();
         ObservableList<jobRecruitModel> recruitData = FXCollections.observableArrayList();
         ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
-
           
           
           
@@ -226,8 +234,7 @@ public class ReadWrite {
             
             
             
-            
-            
+          
             
             
             

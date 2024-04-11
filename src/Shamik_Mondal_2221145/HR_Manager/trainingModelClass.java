@@ -72,7 +72,8 @@ public class trainingModelClass implements Serializable  {
 
     public void settDate(LocalDate tDate) {
         this.tDate = tDate;
-    }
+    };
+    
     
     @Override
     public String toString() {

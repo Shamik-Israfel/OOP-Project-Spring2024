@@ -50,6 +50,8 @@ public class Training_workshopsController implements Initializable {
     private TableColumn<trainingModelClass, Integer> employeeCodeTableColumn;
     
     private ObservableList<trainingModelClass> twlist;
+    
+   // private ObservableList<trainingModelClass> tmwlist;
 
     @Override
     public void initialize(URL url, ResourceBundle resources) {
@@ -65,9 +67,9 @@ public class Training_workshopsController implements Initializable {
         String n = nameTextField.getText();
         int c = Integer.parseInt(codeTextField.getText());
 
-        trainingModelClass tList = new trainingModelClass(n, c);
-        twlist.add(tList);
-                ReadWrite.writeObjectToFile("TrainingData.bin", tList);
+        trainingModelClass dummytrainee = new trainingModelClass(n, c);
+        twlist.add(dummytrainee);
+                ReadWrite.writeObjectToFile("newTrainingData.bin", twlist);
 
         employeeListTableView.setItems(twlist); 
 
@@ -78,11 +80,13 @@ public class Training_workshopsController implements Initializable {
 
     @FXML
     private void showDetailsButtonOnClicked(ActionEvent event) {
-        trainingModelClass empList = new trainingModelClass("", 0);
-        ObservableList<trainingModelClass> worklist = (ObservableList<trainingModelClass>) ReadWrite.readObjectToFile("TrainingData.bin", empList);
+        trainingModelClass tmwlist = new trainingModelClass("", 0);
+        ObservableList<trainingModelClass> worklist = (ObservableList<trainingModelClass>) ReadWrite.readObjectToFile("newTrainingData.bin", tmwlist);
         for (trainingModelClass z : worklist) {
             detailsTextArea.appendText(z.toString2() + "\n");
             // System.out.println(z.toString());
+
+            
         }
     }
 
