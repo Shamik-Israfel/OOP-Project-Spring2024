@@ -11,7 +11,7 @@ import Shamik_Mondal_2221145.HR_Manager.timePerformanceModel;
 import Shamik_Mondal_2221145.HR_Manager.HRLeaveModel ;
 import Shamik_Mondal_2221145.HR_Manager.jobRecruitModel;
 import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
-
+import Shamik_Mondal_2221145.Account_Manager.employeeSalaryDetails;
 
 
 
@@ -89,7 +89,8 @@ public class ReadWrite {
         ObservableList<HRLeaveModel> leaveData = FXCollections.observableArrayList();
         ObservableList<jobRecruitModel> recruitData = FXCollections.observableArrayList();
         ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
-          
+        ObservableList<employeeSalaryDetails> SalaryCalculator = FXCollections.observableArrayList();
+ 
           
           
           
@@ -236,7 +237,19 @@ public class ReadWrite {
             
           
             
-            
+        else if (instance instanceof employeeSalaryDetails) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                     SalaryCalculator.add((employeeSalaryDetails) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik salaryCalculator exe");
+
+                }
+            }          
             
             
             
@@ -247,6 +260,27 @@ public class ReadWrite {
             
             
      
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
             
             
             
@@ -304,7 +338,10 @@ public class ReadWrite {
                 else if ( instance instanceof HRLeaveModel ) return leaveData;
                 else if ( instance instanceof jobRecruitModel ) return recruitData;
                 else if ( instance instanceof trainingModelClass ) return tmcData;
-
+                else if ( instance instanceof employeeSalaryDetails ) return SalaryCalculator;
+                
+                 
+                
                 return SData;
             }
 

@@ -4,6 +4,8 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -81,6 +83,7 @@ public class employeeSalaryCalaculatorController implements Initializable {
         int tax = TaxPercentCombobox.getValue();
 
         Salary obj = new Salary(salary, bonus, tax, 0, "", "", null, "", "", "", "", "", null, 0);
+                              ReadWrite.writeObjectToFile("SalaryCalculator.bin", obj);
 
         salaryL.add(obj);
         salaryList.add(obj);
@@ -114,7 +117,7 @@ public class employeeSalaryCalaculatorController implements Initializable {
     }
 
     @FXML
-    private void detailsButtonOnClicked(ActionEvent event) {
+    private void detailsButtonOnClicked(ActionEvent event) throws IOException{
         String name = NameTextField.getText();
         int code = Integer.parseInt(EmpIDTextField.getText());
         double taxpercent = TaxPercentCombobox.getValue();
@@ -123,13 +126,17 @@ public class employeeSalaryCalaculatorController implements Initializable {
 
         employeeSalaryDetails dummySalaryDetails = new employeeSalaryDetails(name, code, taxpercent, bonus, Department);
 
-        calcDetailsTableView.getItems().add(dummySalaryDetails);
 
         NameTextField.clear();
         EmpIDTextField.clear();
         BonusTextField.clear();
         TaxPercentCombobox.setValue(null);
         DepartmentCombobox.setValue(null);
-    }
+          calcDetailsTableView.getItems().add(dummySalaryDetails);
 
+    }
+    
+
+    
+    
 }

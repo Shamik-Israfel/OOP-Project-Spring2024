@@ -5,7 +5,9 @@
 package Shamik_Mondal_2221145.HR_Manager;
 
 import Shamik_Mondal_2221145.ReadWrite;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.net.URL;
 import java.time.LocalDate;
@@ -145,21 +147,8 @@ public class Attendance_PerformanceController implements Initializable {
 
     @FXML
     private void showPerformanceScoreButtonOnClicked(ActionEvent event)throws IOException {
-                timePerformanceModel performancedummy = new timePerformanceModel("", "", "", 0, 0);
-
-        readperfList = (ObservableList<timePerformanceModel>) ReadWrite.readObjectToFile("PerformanceList.bin", performancedummy);
-
-        //System.out.println(readperfList.size());
-        String add = "";
-        for (timePerformanceModel perf : readperfList) {
-            //System.out.println(perf.toString());
-            add += perf.toString();
-
-        }
-        
-            
-            
-            performanceTableView.getItems().add(performancedummy);
+                 
+            performanceTableView.getItems().addAll(getPerfomanceList());
         }
     
 
@@ -200,6 +189,32 @@ public class Attendance_PerformanceController implements Initializable {
 
     @FXML
     private void pieChartButtonOnClicked(ActionEvent event) {
+    }
+    
+   
+    
+    public static ObservableList<timePerformanceModel> getPerfomanceList() {
+        ObjectInputStream ois = null;
+        ObservableList<timePerformanceModel> list = FXCollections.observableArrayList();
+        try {
+           timePerformanceModel e;
+            ois = new ObjectInputStream(new FileInputStream("PerformanceList.bin"));
+
+            while (true) {
+                e = (timePerformanceModel) ois.readObject();
+                list.add(e);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+        return list;
     }
 
 }
