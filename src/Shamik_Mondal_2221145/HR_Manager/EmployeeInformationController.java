@@ -7,6 +7,7 @@ package Shamik_Mondal_2221145.HR_Manager;
 import Shamik_Mondal_2221145.ReadWrite;
 import Shamik_Mondal_2221145.ReadWrite;
 import Shamik_Mondal_2221145.Employee;
+import Shamik_Mondal_2221145.GeneratePDFModelClass;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
@@ -140,6 +141,17 @@ public class EmployeeInformationController implements Initializable {
 
     @FXML
     private void downloadPdfButtonOnClicked(ActionEvent event) {
+        ObservableList<Employee> employees = empInfoTableView.getItems();
+    if (employees != null && !employees.isEmpty()) {
+        GeneratePDFModelClass.generatePdf(employees, "Employee Information");
+        // Optionally show success message or perform other actions
+    } else {
+        System.out.println("No employee data to generate PDF.");
+        // Optionally show error message or perform error handling
+    }
+        
+        
+        
     }
 
 }
