@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -49,6 +50,9 @@ public class AccManagerLeaveController implements Initializable {
         String stat = "Pending";
         
         AccManagerLeave accleave = new AccManagerLeave(name,dept,stat,code,days);
+                         ReadWrite.writeObjectToFile("ApplyLeave.bin", accleave);
+
+        
         accManStatusTextField.setText("Pending");
         
         
