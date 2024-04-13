@@ -36,8 +36,7 @@ public class employeeSalaryCalaculatorController implements Initializable {
     private TextField BonusTextField;
     @FXML
     private ComboBox<Integer> TaxPercentCombobox;
-    @FXML
-    private TextArea SalaryOutputTextArea;
+    private TextField SalaryOutputTextArea;
     @FXML
     private ComboBox<String> DepartmentCombobox;
     @FXML
@@ -57,8 +56,12 @@ public class employeeSalaryCalaculatorController implements Initializable {
     @FXML
     private TableColumn<employeeSalaryDetails, String> detailsDeptTableColumn;
 
-    private ObservableList<Salary> salaryList;
+    private ObservableList<employeeSalaryDetails> salaryList;
     private ObservableList<Salary> salaryL;
+    @FXML
+    private TableColumn<employeeSalaryDetails, Float> salaryTableColumn;
+    @FXML
+    private TextField SalaryOutputTextField;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -73,7 +76,7 @@ public class employeeSalaryCalaculatorController implements Initializable {
         detailsTaxTableColumn.setCellValueFactory(new PropertyValueFactory<employeeSalaryDetails, Double>("taxpercent"));
         detailsBonusTableColumn.setCellValueFactory(new PropertyValueFactory<employeeSalaryDetails, Integer>("bonus"));
         detailsDeptTableColumn.setCellValueFactory(new PropertyValueFactory<employeeSalaryDetails, String>("Department"));
-
+        salaryTableColumn.setCellValueFactory(new PropertyValueFactory<employeeSalaryDetails, Float>("Salary"));
     }
 
     @FXML
@@ -83,15 +86,14 @@ public class employeeSalaryCalaculatorController implements Initializable {
         int tax = TaxPercentCombobox.getValue();
 
         Salary obj = new Salary(salary, bonus, tax, 0, "", "", null, "", "", "", "", "", null, 0);
-                              ReadWrite.writeObjectToFile("SalaryCalculator.bin", obj);
 
         salaryL.add(obj);
-        salaryList.add(obj);
+
         int Total = 0;
         for (Salary y : salaryL) {
             Total += y.getNetSalary();
         }
-        SalaryOutputTextArea.setText(Integer.toString(Total));
+        SalaryOutputTextField.setText(Integer.toString(Total));
         EmployeeNameShow.setText(NameTextField.getText());
     }
 
@@ -115,28 +117,53 @@ public class employeeSalaryCalaculatorController implements Initializable {
     @FXML
     private void SceneSwitchToPieChartButton(ActionEvent event) {
     }
+    
+    
+    
+    
+     @FXML
+    private void viewpreviousDataButttonOnClick(ActionEvent event) {
+        employeeSalaryDetails saldummy = new employeeSalaryDetails("", 0, 0.0, 0, "", null);
+        ObservableList<employeeSalaryDetails> salaryList = (ObservableList<employeeSalaryDetails>) ReadWrite.readObjectToFile("Salary.bin", saldummy);
+      calcDetailsTableView.getItems().addAll(salaryList);
+    }
 
     @FXML
-    private void detailsButtonOnClicked(ActionEvent event) throws IOException{
-        String name = NameTextField.getText();
-        int code = Integer.parseInt(EmpIDTextField.getText());
-        double taxpercent = TaxPercentCombobox.getValue();
-        int bonus = Integer.parseInt(BonusTextField.getText());
-        String Department = DepartmentCombobox.getValue();
+    
+private void detailsButtonOnClicked(ActionEvent event) throws IOException {
+    String name = NameTextField.getText();
+    int code = Integer.parseInt(EmpIDTextField.getText());
+    double taxpercent = TaxPercentCombobox.getValue();
+    Integer bonus = Integer.parseInt(BonusTextField.getText());
+    String department = DepartmentCombobox.getValue();
+    
+    
+    float salary = 0.0f;
+    try {
+        salary = Float.parseFloat(SalaryOutputTextField.getText());
+    } catch (NumberFormatException e) {
+        
+        System.err.println("Invalid salary value: " + SalaryOutputTextField.getText());
+    }
 
-        employeeSalaryDetails dummySalaryDetails = new employeeSalaryDetails(name, code, taxpercent, bonus, Department);
+    
+    employeeSalaryDetails salaryDetails = new employeeSalaryDetails(name, code, taxpercent, bonus, department, salary);
+    salaryList.add(salaryDetails);
+    calcDetailsTableView.getItems().add(salaryDetails);
+       ReadWrite.writeObjectToFile("Salary.bin", salaryDetails);
+    // Clear input fields after adding details
+    NameTextField.clear();
+    EmpIDTextField.clear();
+    BonusTextField.clear();
+    TaxPercentCombobox.setValue(null);
+    DepartmentCombobox.setValue(null);
+    SalaryOutputTextField.clear();
+}
 
-
-        NameTextField.clear();
-        EmpIDTextField.clear();
-        BonusTextField.clear();
-        TaxPercentCombobox.setValue(null);
-        DepartmentCombobox.setValue(null);
-          calcDetailsTableView.getItems().add(dummySalaryDetails);
-
+   
     }
     
 
-    
-    
-}
+   
+
+

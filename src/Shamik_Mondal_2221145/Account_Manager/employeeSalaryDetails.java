@@ -16,16 +16,15 @@ public class employeeSalaryDetails implements Serializable {
     Double taxpercent;
     Integer bonus;
     String Department;
+    Float  Salary;
 
-   
-
-
-    public employeeSalaryDetails(String name, Integer code, Double taxpercent, Integer bonus, String Department) {
+    public employeeSalaryDetails(String name, Integer code, Double taxpercent, Integer bonus, String Department, Float Salary) {
         this.name = name;
         this.code = code;
         this.taxpercent = taxpercent;
         this.bonus = bonus;
         this.Department = Department;
+        this.Salary = Salary;
     }
 
     public String getName() {
@@ -68,10 +67,22 @@ public class employeeSalaryDetails implements Serializable {
         this.Department = Department;
     }
 
+    public Float getSalary() {
+        return Salary;
+    }
+
+    public void setSalary(Float Salary) {
+        this.Salary = Salary;
+    }
+
     @Override
     public String toString() {
-        return "employeeSalaryDetails{" + "name=" + name + ", code=" + code + ", taxpercent=" + taxpercent + ", bonus=" + bonus + ", Department=" + Department + '}';
+        return "employeeSalaryDetails{" + "name=" + name + ", code=" + code + ", taxpercent=" + taxpercent + ", bonus=" + bonus + ", Department=" + Department + ", Salary=" + Salary + '}';
     }
+   
+
+
+  
     
     
 }

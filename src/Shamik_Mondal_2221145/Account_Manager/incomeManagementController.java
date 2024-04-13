@@ -78,23 +78,23 @@ public void initialize(URL location, ResourceBundle resources) {
     @FXML
     private void totalIncomeButttonOnClick(ActionEvent event) {
 
+
         //Integer selectedYear = yearIncComboBox.getSelectionModel().getSelectedItem();
         // Check if a year is selected before proceeding
-        incomeManagement IncomeManagement = new incomeManagement(
-                // Integer year = yearIncComboBox.getValue();
-                Double.parseDouble(sellingTicketsTextArea.getText()),
-                Double.parseDouble(sponsorDealsTextArea.getText()),
-                Double.parseDouble(broadcastRightsTextArea.getText())
-        );
+        // Integer year = yearIncComboBox.getValue();
+        double sellingTickets = Double.parseDouble(sellingTicketsTextArea.getText());
 
-        //caluculatdAmountTextArea.setText(Integer.valueOf(incomeManagement.getTotalIncome()));
-        // caluculatdAmountTextArea.appendText(IncomeManagement.toString());
+        double sponsorDeals = Double.parseDouble(sponsorDealsTextArea.getText());
+        double broadcastsRights = Double.parseDouble(broadcastRightsTextArea.getText());
+     incomeManagement IncomeManagement = new incomeManagement(sellingTickets,sponsorDeals,broadcastsRights);
+
+        
         yearText.setText(String.valueOf(yearIncComboBox.getSelectionModel().getSelectedItem()));
 
         ReadWrite.writeObjectToFile("Income.bin", IncomeManagement);
         //calculateTableView.getItems().addAll(IncomeManagement);
-calculateTableView.getItems().clear(); // Clear existing items
-calculateTableView.getItems().add(IncomeManagement); // Add the new item
+calculateTableView.getItems().clear(); 
+calculateTableView.getItems().add(IncomeManagement); 
     }
 
     @FXML

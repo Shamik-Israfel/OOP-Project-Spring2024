@@ -17,7 +17,7 @@ public class trainingModelClass implements Serializable  {
     protected int code,startTime;
     protected LocalDate tDate;
 
-    public trainingModelClass(String title, int code) {
+    public trainingModelClass(String title, String name1, String amPm, int code, int startTime1, LocalDate tDate1) {
         this.title = title;
         this.name = name;
         this.ampm = ampm;

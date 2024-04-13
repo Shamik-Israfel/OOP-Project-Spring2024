@@ -71,7 +71,7 @@ public class LeaveRequestController implements Initializable {
     
     @FXML
     private void acceptButtonOnClicked(ActionEvent event) {
-       try { 
+      try { 
             if ( leaveRequestsTableView.getSelectionModel().getSelectedItem() == null ){
                 throw new RuntimeException("Table Selection cannot be empty.");
             }
@@ -96,11 +96,10 @@ public class LeaveRequestController implements Initializable {
         catch (RuntimeException e){
             GenerateAlerts.unsuccessfulAlert(e.toString());
         }
-        
     }
     @FXML
-    private void rejectButtonOnClicked(ActionEvent event) {
-         try { 
+private void rejectButtonOnClicked(ActionEvent event) {
+     try { 
             if ( leaveRequestsTableView.getSelectionModel().getSelectedItem() == null ){
                 throw new RuntimeException("Table Selection cannot be empty.");
             }
@@ -119,15 +118,17 @@ public class LeaveRequestController implements Initializable {
                     //System.out.println(leaveReqData);
                 }   
             }
-    refreshTable();
+            refreshTable();
         }
         catch (RuntimeException e){
             GenerateAlerts.unsuccessfulAlert(e.toString());
         }
-    }
+}
+
 
     @FXML
     private void showTableButtonOnClicked(ActionEvent event) {
+        
     }
  //Shamik   
 

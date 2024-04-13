@@ -7,6 +7,7 @@ package Shamik_Mondal_2221145.HR_Manager;
 import Shamik_Mondal_2221145.ReadWrite;
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -16,11 +17,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
+
 
 /**
  *
@@ -42,14 +42,11 @@ public class Training_workshopsController implements Initializable {
     private ComboBox<Integer> StartTimeComboBox;
     @FXML
     private ComboBox<String> amPmComboBox;
-    @FXML
-    private TableView<trainingModelClass> employeeListTableView;
-    @FXML
-    private TableColumn<trainingModelClass, String> employeeNameTableColumn;
-    @FXML
-    private TableColumn<trainingModelClass, Integer> employeeCodeTableColumn;
+   
     
-    private ObservableList<trainingModelClass> twlist;
+    private ArrayList<trainingModelClass> twlist;;
+    @FXML
+    private TextArea employeeListTextArea;
     
    // private ObservableList<trainingModelClass> tmwlist;
 
@@ -57,36 +54,40 @@ public class Training_workshopsController implements Initializable {
     public void initialize(URL url, ResourceBundle resources) {
         StartTimeComboBox.getItems().addAll(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
         amPmComboBox.getItems().addAll("AM", "PM");
-        twlist = FXCollections.observableArrayList();
-        employeeNameTableColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
-        employeeCodeTableColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
+       
+       twlist = new ArrayList<>();
     }
 
     @FXML
     private void addEmployeeButtonOnClicked(ActionEvent event) throws IOException {
-        String n = nameTextField.getText();
-        int c = Integer.parseInt(codeTextField.getText());
+         String title = titleTextField.getText();
+        String name = nameTextField.getText();
+        int code = Integer.parseInt(codeTextField.getText());
+        int startTime = StartTimeComboBox.getValue();
+        String amPm = amPmComboBox.getValue();
+        LocalDate tDate = trainingDate.getValue();
 
-        trainingModelClass dummytrainee = new trainingModelClass(n, c);
-        twlist.add(dummytrainee);
-                ReadWrite.writeObjectToFile("newTrainingData.bin", twlist);
-
-        employeeListTableView.setItems(twlist); 
-
+        trainingModelClass empList = new trainingModelClass(title, name, amPm, code, startTime, tDate);
+        twlist.add(empList);
+        
+        //for (trainingModelClass xy : twlist) {
+        ReadWrite.writeObjectToFile("TrainingData.bin", empList);
+        //}
         nameTextField.clear();
         codeTextField.clear();
+
+        employeeListTextArea.appendText(empList.toString() + "\n");
 
     }
 
     @FXML
-    private void showDetailsButtonOnClicked(ActionEvent event) {
-        trainingModelClass tmwlist = new trainingModelClass("", 0);
-        ObservableList<trainingModelClass> worklist = (ObservableList<trainingModelClass>) ReadWrite.readObjectToFile("newTrainingData.bin", tmwlist);
+    private void showDetailsButtonOnClicked(ActionEvent event) throws IOException{
+       
+        trainingModelClass empList = new trainingModelClass("", "", "", 0, 0, null);
+        ObservableList<trainingModelClass> worklist = (ObservableList<trainingModelClass>) ReadWrite.readObjectToFile("TrainingData.bin", empList);
         for (trainingModelClass z : worklist) {
             detailsTextArea.appendText(z.toString2() + "\n");
             // System.out.println(z.toString());
-
-            
         }
     }
 

@@ -4,8 +4,6 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -48,11 +46,6 @@
       <Button layoutX="660.0" layoutY="487.0" mnemonicParsing="false" onAction="#dashboardButtonOnClicked" prefHeight="42.0" prefWidth="145.0" text="Dashboard" />
       <ComboBox fx:id="StartTimeComboBox" layoutX="164.0" layoutY="171.0" prefHeight="31.0" prefWidth="106.0" promptText="1-12" />
       <ComboBox fx:id="amPmComboBox" layoutX="296.0" layoutY="171.0" prefHeight="31.0" prefWidth="106.0" promptText="AM/PM" />
-      <TableView fx:id="employeeListTableView" layoutX="459.0" layoutY="220.0" prefHeight="114.0" prefWidth="433.0">
-        <columns>
-          <TableColumn fx:id="employeeNameTableColumn" prefWidth="218.0" text="Employee name" />
-          <TableColumn fx:id="employeeCodeTableColumn" prefWidth="214.0" text="Employee Code " />
-        </columns>
-      </TableView>
+      <TextArea fx:id="employeeListTextArea" layoutX="464.0" layoutY="215.0" prefHeight="120.0" prefWidth="432.0" />
    </children>
 </AnchorPane>
