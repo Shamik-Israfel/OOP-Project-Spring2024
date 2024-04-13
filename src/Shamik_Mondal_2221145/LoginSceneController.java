@@ -56,35 +56,35 @@ public class LoginSceneController implements Initializable {
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145.Account_Manager/Account_Manager/Account_Manager_DashboardController");
-                }
-                else if (user.equals("Administration Officer")) {
-                   
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-                    SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Meraj_Ahmed__2221557/Administration_Officer/Administration_Officer_Dashboard.fxml");  
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145/HR_Manager/HR_Manager_Dashboard.fxml");
                 }
                 else if (user.equals("Accounts Officer")) {
                    
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/KaziFabihaGolamLiya_2222156/AccountOfficer/AccOfficerDashboard.fxml");  
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145/Account_Manager/Account_Manager_Dashboard.fxml");  
                 }
-                else if (user.equals("Cleaning Crew Member")) {
+                else if (user.equals("Coach")) {
                    
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/KaziFabihaGolamLiya_2222156/cleaningCrewMember/CleanerDashboard.fxml");  
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"");  
                 }
-                else if (user.equals("Client")) {
+                else if (user.equals("Supplier")) {
                    
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/KaziFabihaGolamLiya_2222156/DummyMeaw/PlaceWashOrder.fxml");  
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"");  
+                }
+                else if (user.equals("Physiotherapist")) {
+                   
+                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+                    SceneSwitching newScene = new SceneSwitching();
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"");  
                 }
             }
 

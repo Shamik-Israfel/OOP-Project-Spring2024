@@ -5,7 +5,9 @@
 package Shamik_Mondal_2221145.HR_Manager;
 
 import Shamik_Mondal_2221145.ReadWrite;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.util.ArrayList;
 import java.net.URL;
 import java.time.LocalDate;
@@ -79,7 +81,7 @@ public class Attendance_PerformanceController implements Initializable {
     @FXML
     private TableColumn<timePerformanceModel,Integer> performanceCodeColumn;
     @FXML
-    private TableColumn<timePerformanceModel,String> performanceScoreColumn;
+    private TableColumn<timePerformanceModel,Integer> performanceScoreColumn;
     @FXML
     private TableColumn<timePerformanceModel,String> peformanceEmployeeColumn;
 
@@ -114,10 +116,14 @@ public class Attendance_PerformanceController implements Initializable {
         performanceCodeColumn.setCellValueFactory(new PropertyValueFactory<>("code"));
         performanceScoreColumn.setCellValueFactory(new PropertyValueFactory<>("score"));
         
+        
+        
+            performanceTableView.setItems(perfList);
+
     }
 
     @FXML
-    private void addShowButtonOnClicked(ActionEvent event) {
+    private void addShowButtonOnClicked(ActionEvent event) throws IOException{
         String name = nametextField.getText();
         int code = Integer.parseInt(codeTextField.getText());
         int chkin = checkInCombobox.getValue();
@@ -141,25 +147,22 @@ public class Attendance_PerformanceController implements Initializable {
 
     @FXML
     private void showPerformanceScoreButtonOnClicked(ActionEvent event)throws IOException {
-                timePerformanceModel performancedummy = new timePerformanceModel("", "", "", 0, 0);
-                readperfList = (ObservableList<timePerformanceModel>) ReadWrite.readObjectToFile("PerformanceList.bin", performancedummy);
-           String add = "";
-        for (timePerformanceModel perf : readperfList) {
-            //System.out.println(perf.toString());
-            add += perf.toString();
-        performanceTableView.getItems().add(performancedummy);
+                 
+            performanceTableView.getItems().addAll(getPerfomanceList());
         }
-    }
+    
 
     @FXML
-    private void addPerformanceScoreButtonOnClicked(ActionEvent event) {
+    private void addPerformanceScoreButtonOnClicked(ActionEvent event) throws IOException{
         performanceTableView.getItems().clear();
-        String name = performanceNameTextField.getText();
-        String pdept = PerformanceDepartmentCombobox.getValue();
-        String mon = monthComboBox.getValue();
-        int code = Integer.parseInt(performanceCodeTextField.getText());
-        int score = PerformanceScoreCombobox.getValue();
+       
         
+           String name = performanceNameTextField.getText();
+        int code = Integer.parseInt(performanceCodeTextField.getText());
+        String pdept = PerformanceDepartmentCombobox.getValue();
+        int score = PerformanceScoreCombobox.getValue();
+        String mon = monthComboBox.getValue();
+
         timePerformanceModel performance = new timePerformanceModel(name, pdept, mon, code, score);
         //System.out.println(performance.toString2());
         ReadWrite.writeObjectToFile("PerformanceList.bin", performance);
@@ -167,10 +170,10 @@ public class Attendance_PerformanceController implements Initializable {
         perfList.add(performance);
 
         performanceNameTextField.clear();
-        PerformanceDepartmentCombobox.setValue(null);
-        monthComboBox.setValue(null);
         performanceCodeTextField.clear();
+        PerformanceDepartmentCombobox.setValue(null);
         PerformanceScoreCombobox.setValue(null);
+        monthComboBox.setValue(null);
         
         
     }
@@ -186,6 +189,32 @@ public class Attendance_PerformanceController implements Initializable {
 
     @FXML
     private void pieChartButtonOnClicked(ActionEvent event) {
+    }
+    
+   
+    
+    public static ObservableList<timePerformanceModel> getPerfomanceList() {
+        ObjectInputStream ois = null;
+        ObservableList<timePerformanceModel> list = FXCollections.observableArrayList();
+        try {
+           timePerformanceModel e;
+            ois = new ObjectInputStream(new FileInputStream("PerformanceList.bin"));
+
+            while (true) {
+                e = (timePerformanceModel) ois.readObject();
+                list.add(e);
+            }
+        } catch (RuntimeException e) {
+            e.printStackTrace();
+        } catch (Exception ex) {
+            try {
+                if (ois != null) {
+                    ois.close();
+                }
+            } catch (IOException ex1) {
+            }
+        }
+        return list;
     }
 
 }
