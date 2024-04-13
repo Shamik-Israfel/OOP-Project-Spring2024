@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="501.0" prefWidth="579.0" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coach.CommunicationController">
+
+    
+    <ComboBox layoutX="260.0" layoutY="94.0" prefWidth="150.0" promptText="Select Recipient" />
+
+ 
+    <VBox layoutX="14.0" layoutY="94.0" spacing="10.0" />
+
+ 
+    <VBox layoutX="260.0" layoutY="54.0" spacing="10.0" />
+
+ 
+    <Button layoutX="460.0" layoutY="383.0" onAction="#goBackOnMouseClicked" text="Go Back" />
+     <Button layoutX="260.0" layoutY="311.0" onAction="#sendMessageOnMouseClicked" text="Send Message" />
+     <TextArea layoutX="260.0" layoutY="165.0" prefHeight="100.0" prefWidth="200.0" />
+     <Label layoutX="263.0" layoutY="132.0" style="-fx-font-weight: bold;" text="Write Message" />
+     <ListView layoutX="76.0" layoutY="119.0" prefHeight="165.0" prefWidth="150.0" />
+     <Label layoutX="92.0" layoutY="92.0" style="-fx-font-weight: bold;" text="Received Messages" />
+</AnchorPane>

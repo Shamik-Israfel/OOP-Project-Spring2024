@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="477.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sponsor.SponsorshipReportingController">
+    <children>
+        <Button layoutX="29.0" layoutY="402.0" mnemonicParsing="false" onAction="#sponsorshipReportsOnMouseClicked" text="Sponsorship Reports" />
+        <Button layoutX="438.0" layoutY="218.0" mnemonicParsing="false" onAction="#contractManagementOnMouseClicked" text="Contract Management" />
+        
+        <!-- Contract Management Options -->
+        <TextField fx:id="contractDetails" editable="false" layoutX="469.0" layoutY="59.0" />
+        <TextField fx:id="contractStatus" editable="false" layoutX="469.0" layoutY="97.0" />
+        <TextField fx:id="paymentInformation" editable="false" layoutX="474.0" layoutY="150.0" />
+      <Label layoutX="26.0" layoutY="89.0" text="Sponsorship Activities: " />
+      <Label layoutX="25.0" layoutY="230.0" text="Financial Contributions:" />
+      <Label layoutX="35.0" layoutY="316.0" text="Financial Summaries: " />
+      <TextArea layoutX="155.0" layoutY="283.0" prefHeight="83.0" prefWidth="193.0" />
+      <TextArea layoutX="155.0" layoutY="184.0" prefHeight="83.0" prefWidth="193.0" />
+      <TextArea layoutX="155.0" layoutY="56.0" prefHeight="83.0" prefWidth="193.0" />
+      <Label layoutX="373.0" layoutY="63.0" text="Contract Details:" />
+      <Label layoutX="373.0" layoutY="101.0" text="Contract Status:" />
+      <Label layoutX="356.0" layoutY="154.0" text="Payment Information: " />
+      <Button layoutX="481.0" layoutY="414.0" mnemonicParsing="false" onAction="#goBackOnMouseClicked" text="Go Back" />
+    </children>
+</AnchorPane>
