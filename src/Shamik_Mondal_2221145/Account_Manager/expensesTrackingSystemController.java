@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -82,21 +83,29 @@ public class expensesTrackingSystemController implements Initializable {
     @FXML
     private void totalExpensesDetailsButtonOnClick(ActionEvent event) {
 
-        expensesTrackingSystemModelclass ExpensesTrackingSystemModelclass = new expensesTrackingSystemModelclass(
-                Double.parseDouble(amountUsedForFoodAndWatersupplyTextField.getText()),
-                Double.parseDouble(amountOfKitsExpenditureTextField.getText()),
-                Double.parseDouble(amountForTraininigSessionTextField.getText()),
-                Double.parseDouble(amountUsedForTotalSalariesTextField.getText())
-        );
+        
+                double amountUsedForFoodAndWatersupply=Double.parseDouble(amountUsedForFoodAndWatersupplyTextField.getText());
+          double amountOfKitsExpenditure=Double.parseDouble(amountOfKitsExpenditureTextField.getText());
+           double amountForTraininigSession=Double.parseDouble(amountForTraininigSessionTextField.getText());
+            double amountUsedForTotalSalaries= Double.parseDouble(amountUsedForTotalSalariesTextField.getText());
+      
+                        
+        expensesTrackingSystemModelclass ExpensesTrackingSystemModelclass = new expensesTrackingSystemModelclass(amountUsedForFoodAndWatersupply,amountOfKitsExpenditure,amountForTraininigSession,amountUsedForTotalSalaries );
 
         expTextArea.setText(String.valueOf(YearExpComboBox.getSelectionModel().getSelectedItem()));
+        
+ ReadWrite.writeObjectToFile("Expense.Bin", ExpensesTrackingSystemModelclass);
+        totalExpenseDetailsTableView.getItems().clear(); 
+        totalExpenseDetailsTableView.getItems().add(ExpensesTrackingSystemModelclass);
 
-        totalExpenseDetailsTableView.getItems().addAll(ExpensesTrackingSystemModelclass);
-
+    
     }
 
     @FXML
-    private void expGeneratePieChartButtonOnClick(ActionEvent event) {
+    private void expShowPreviousDataButtonOnClick(ActionEvent event) {
+        incomeManagement DummyExpense =new incomeManagement(0,0,0);
+             ObservableList<expensesTrackingSystemModelclass> expList = (ObservableList<expensesTrackingSystemModelclass>) ReadWrite.readObjectToFile("Expense.Bin", DummyExpense);
+         totalExpenseDetailsTableView.setItems(expList );
     }
 
 }

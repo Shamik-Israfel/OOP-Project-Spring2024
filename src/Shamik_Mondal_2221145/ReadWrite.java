@@ -12,6 +12,7 @@ import Shamik_Mondal_2221145.HR_Manager.HRLeaveModel ;
 import Shamik_Mondal_2221145.HR_Manager.jobRecruitModel;
 import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
 import Shamik_Mondal_2221145.Account_Manager.employeeSalaryDetails;
+import Shamik_Mondal_2221145.Account_Manager.expensesTrackingSystemModelclass;
 
 
 
@@ -75,7 +76,7 @@ public class ReadWrite {
     }
 
     public static <T> ObservableList<?> readObjectToFile(String fileName, T instance) {
-        System.out.println("Hasib11");
+        System.out.println("Shamik1");
         File f = null;
         FileInputStream fw = null;
         ObjectInputStream ois = null;
@@ -90,7 +91,8 @@ public class ReadWrite {
         ObservableList<jobRecruitModel> recruitData = FXCollections.observableArrayList();
         ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
         ObservableList<employeeSalaryDetails> SalaryCalculator = FXCollections.observableArrayList();
- 
+         ObservableList<expensesTrackingSystemModelclass> expenseTracking = FXCollections.observableArrayList();
+
           
           
           
@@ -254,7 +256,19 @@ public class ReadWrite {
             
             
             
-            
+          else if (instance instanceof expensesTrackingSystemModelclass) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                     expenseTracking.add((expensesTrackingSystemModelclass) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik expense tracking exe");
+
+                }
+            }              
             
             
             
@@ -319,7 +333,7 @@ public class ReadWrite {
             
         }
                 catch (Exception e) {
-                    System.out.println("Astronut File");
+                    System.out.println("BAFUFE File");
                 } finally {
                     try {
                         if (ois != null) {
@@ -339,7 +353,8 @@ public class ReadWrite {
                 else if ( instance instanceof jobRecruitModel ) return recruitData;
                 else if ( instance instanceof trainingModelClass ) return tmcData;
                 else if ( instance instanceof employeeSalaryDetails ) return SalaryCalculator;
-                
+                else if ( instance instanceof expensesTrackingSystemModelclass ) return expenseTracking;
+
                  
                 
                 return SData;

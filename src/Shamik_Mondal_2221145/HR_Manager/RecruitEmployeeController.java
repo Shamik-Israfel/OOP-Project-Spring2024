@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.HR_Manager;
 
+import Shamik_Mondal_2221145.GeneratePDFModelClass;
 import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -80,6 +81,8 @@ public class RecruitEmployeeController implements Initializable{
 
     @FXML
     private void downloadPdfButtonOnClicked(ActionEvent event) {
+        String a =outputTextArea.getText();
+        GeneratePDFModelClass.generatePdf(a,"Job Required");
        
     }
 

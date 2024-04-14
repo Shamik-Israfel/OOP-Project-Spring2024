@@ -18,34 +18,12 @@ public class incomeManagement implements Serializable{
     private double sellingTickets;
     private double sponsorDeals;
     private double broadcastsRights;
-    private double tIncome;
-    private double sellTicketsDist;
-    private double sponDealsDist;
 
-    public incomeManagement(int sellingTickets, int sponsorDeals, int broadcastsRights) {
-    this.sellingTickets = sellingTickets;
+    public incomeManagement(double sellingTickets, double sponsorDeals, double broadcastsRights) {
+        this.sellingTickets = sellingTickets;
         this.sponsorDeals = sponsorDeals;
         this.broadcastsRights = broadcastsRights;
-        this.tIncome = tIncome;
-        this.sellTicketsDist = sellTicketsDist;
-        this.sponDealsDist = sponDealsDist;
     }
-
-    incomeManagement(double sellingTickets, double sponsorDeals, double broadcastsRights) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-      
-    
-
-   
-
-    
-
-    
-   
-
-  
 
     public double getSellingTickets() {
         return sellingTickets;
@@ -70,30 +48,8 @@ public class incomeManagement implements Serializable{
     public void setBroadcastsRights(double broadcastsRights) {
         this.broadcastsRights = broadcastsRights;
     }
-
-    public double gettIncome() {
-        return tIncome;
-    }
-
-    public void settIncome(double tIncome) {
-        this.tIncome = tIncome;
-    }
-
-    public double getSellTicketsDist() {
-        return sellTicketsDist;
-    }
-
-    public void setSellTicketsDist(double sellTicketsDist) {
-        this.sellTicketsDist = sellTicketsDist;
-    }
-
-    public double getSponDealsDist() {
-        return sponDealsDist;
-    }
-
-    public void setSponDealsDist(double sponDealsDist) {
-        this.sponDealsDist = sponDealsDist;
-    }
+ 
+   
    
     
     

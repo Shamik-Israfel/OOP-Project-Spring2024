@@ -12,10 +12,14 @@ import com.itextpdf.layout.Document;
 import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.element.Text;
+import static java.awt.SystemColor.text;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.net.MalformedURLException;
 import java.util.Optional;
-import javafx.collections.ObservableList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.FileChooser;
@@ -31,7 +35,7 @@ import Shamik_Mondal_2221145.GeneratePDFModelClass;
 public class GeneratePDFModelClass {
 
     private static String titleText;
-     public static void generatePdf(ObservableList<Employee> employees, String text) {
+     public static void generatePdf(String text, String job_Required) {
         try {
             FileChooser fc = new FileChooser();
             fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("PDF files", "*.pdf"));

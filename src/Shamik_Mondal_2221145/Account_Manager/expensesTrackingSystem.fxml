@@ -47,7 +47,7 @@
             <Font name="Bookman Old Style" size="20.0" />
          </font>
       </Button>
-      <Button layoutX="630.0" layoutY="225.0" mnemonicParsing="false" onAction="#expGeneratePieChartButtonOnClick" prefHeight="39.0" prefWidth="255.0" text="Generate PieChart">
+      <Button layoutX="630.0" layoutY="225.0" mnemonicParsing="false" onAction="#expShowPreviousDataButtonOnClick" prefHeight="39.0" prefWidth="255.0" text="Show Previous Data">
          <font>
             <Font name="Bookman Old Style" size="20.0" />
          </font>
