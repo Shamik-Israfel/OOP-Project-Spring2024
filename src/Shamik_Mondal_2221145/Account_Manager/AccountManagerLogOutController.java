@@ -11,8 +11,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 /**
@@ -20,6 +24,9 @@ import javafx.stage.Stage;
  * @author hp
  */
 public class AccountManagerLogOutController implements Initializable{
+
+    @FXML
+    private Button accLogOutButton;
 
     
     
@@ -32,18 +39,23 @@ public class AccountManagerLogOutController implements Initializable{
     
     @FXML
     private void AccManagerLogOutButtonOnClick(ActionEvent event) throws IOException {
-        SceneSwitching newscene = new SceneSwitching();
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        if ( GenerateAlerts.confirmationAlert() ) {
-        newscene.logOutSceneSwitching(stage);
-        GenerateAlerts.successfulAlert("Remember, logging out is the only time we can all agree on 'balancing the books!" + "\n" + "Please visit Again"); }
-    
-    }
+       accLogOutButton.getScene().getWindow().hide();
+        Stage login = new Stage();
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Shamik_Mondal_2221145/LoginScene.fxml"));
+            Scene scene = new Scene(root);
+            login.setScene(scene);
+            login.setResizable(false);
+            login.show();
+            // Create a object For using Label which is located login scene    
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         
         
         
     }
 
     
-    
+}
 

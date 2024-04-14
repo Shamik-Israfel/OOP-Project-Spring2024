@@ -13,6 +13,7 @@ import Shamik_Mondal_2221145.HR_Manager.jobRecruitModel;
 import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
 import Shamik_Mondal_2221145.Account_Manager.employeeSalaryDetails;
 import Shamik_Mondal_2221145.Account_Manager.expensesTrackingSystemModelclass;
+import Shamik_Mondal_2221145.Account_Manager.FinancialRisk;
 
 
 
@@ -92,6 +93,7 @@ public class ReadWrite {
         ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
         ObservableList<employeeSalaryDetails> SalaryCalculator = FXCollections.observableArrayList();
          ObservableList<expensesTrackingSystemModelclass> expenseTracking = FXCollections.observableArrayList();
+         ObservableList<FinancialRisk> RiskFin = FXCollections.observableArrayList();
 
           
           
@@ -265,14 +267,26 @@ public class ReadWrite {
                      expenseTracking.add((expensesTrackingSystemModelclass) ois.readObject());
                     }
                 }catch (Exception e) {
-                    System.out.println("Shamik expense tracking exe");
+                    System.out.println("Shamik expensetracking exe");
 
                 }
             }              
             
             
             
-            
+           else if (instance instanceof FinancialRisk) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                     RiskFin.add((FinancialRisk) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik financerisk exe");
+
+                }
+            }               
      
             
             
@@ -354,6 +368,7 @@ public class ReadWrite {
                 else if ( instance instanceof trainingModelClass ) return tmcData;
                 else if ( instance instanceof employeeSalaryDetails ) return SalaryCalculator;
                 else if ( instance instanceof expensesTrackingSystemModelclass ) return expenseTracking;
+                else if ( instance instanceof FinancialRisk ) return RiskFin;
 
                  
                 

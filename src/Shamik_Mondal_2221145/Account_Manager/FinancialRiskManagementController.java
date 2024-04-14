@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.ObservableList;
@@ -100,7 +101,7 @@ public class FinancialRiskManagementController implements Initializable{
                                     "\nRiskScore >= 0.4 = Medium Risk" +
                                     "\nRiskScore <= 0.4 = Low Risk]" +"\n";
 
-        
+        ReadWrite.overWriteObjectToFile("FinancialRisk.bin", riskAnalysisReport);
                 riskTextArea.setText(riskAnalysisReport);
 
        
