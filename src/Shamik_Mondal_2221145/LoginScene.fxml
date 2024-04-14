@@ -45,7 +45,7 @@
       </Label>
       <Button layoutX="692.0" layoutY="359.0" mnemonicParsing="false" onAction="#signUpButton" text="Sign up" />
       <Line endX="50.0" endY="2.0" layoutX="486.0" layoutY="90.0" startX="50.0" startY="386.0" strokeWidth="5.0" />
-      <ImageView fitHeight="90.0" fitWidth="80.0" layoutX="118.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="80.0" fitWidth="283.0" layoutX="118.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../important%20Netbeans%20Project/images.png" />
          </image>

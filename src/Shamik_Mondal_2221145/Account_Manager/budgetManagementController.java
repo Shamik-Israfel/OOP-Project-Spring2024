@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -96,40 +97,72 @@ perKitExpenditureTableCol.setCellValueFactory(cellData -> new SimpleDoubleProper
         
         
     }
-    @FXML
-    private void budPDFDownloadButtonOnCLick(ActionEvent event) {
+    
+        
+        
    
+
+   
+
+   @FXML
+    private void budDetaisButtonOnClick(ActionEvent event) {
+                double approximateBudgetForAwayMatches=Double.parseDouble(budgetForAwayMatchesTextField.getText());
+              double approximateBudgetForFoodAndWaterSupply =Double.parseDouble(budgetForFoodAndWaterTextField.getText());
+                 double approximateBudgetForTransportation=Double.parseDouble(budgetForTransportationTextField.getText());
+                double approximateBudgetForKitExpenditure= Double.parseDouble(budgetFotKitExpenTextField.getText());
+        budgetManagementModelClass BudgetManagementModelClass = new budgetManagementModelClass(approximateBudgetForAwayMatches,approximateBudgetForFoodAndWaterSupply,approximateBudgetForTransportation,approximateBudgetForKitExpenditure);
+
+        
+        yearTxtBuds.setText(String.valueOf(yearComboBoxBud.getSelectionModel().getSelectedItem()));
+                  ReadWrite.writeObjectToFile("Budget.bin", BudgetManagementModelClass);
+        //calculateTableView.getItems().addAll(IncomeManagement);
+       budgetTableVIew.getItems().clear(); 
+       budgetTableVIew.getItems().add(BudgetManagementModelClass);      
+                         
+              
+    
+
+
+            
+
+    
     
     
     }
 
+@FXML
+    private void budPDFDownloadButtonOnCLick(ActionEvent event) {
+     budgetManagementModelClass Dummybud =new budgetManagementModelClass(0,0,0,0);
+             ObservableList<budgetManagementModelClass> budList = (ObservableList<budgetManagementModelClass>) ReadWrite.readObjectToFile("Budget.bin", Dummybud);
+         budgetTableVIew.setItems(budList ); // Set items to TableView
     
-        
-        
-   
+    
+    }
 
     @FXML
     private void budBarChartButtonOnClick(ActionEvent event) {
     }
 
-   @FXML
-    private void budDetaisButtonOnClick(ActionEvent event) {
-        budgetManagementModelClass BudgetManagementModelClass = new budgetManagementModelClass(
-                 Double.parseDouble(budgetForAwayMatchesTextField.getText()),
-                 Double.parseDouble(budgetForFoodAndWaterTextField.getText()),
-                 Double.parseDouble(budgetForTransportationTextField.getText()),
-                 Double.parseDouble(budgetFotKitExpenTextField.getText())
+    
 
-                         
-                         
-                ); 
-    
-            budgetTableVIew.getItems().addAll(BudgetManagementModelClass);
 
-            yearTxtBuds.setText(String.valueOf(yearComboBoxBud.getSelectionModel().getSelectedItem()));
 
-    
-    
-    
-    }
+
+
+
+
+
+
+
 } 
+
+
+
+
+
+
+
+
+
+
+

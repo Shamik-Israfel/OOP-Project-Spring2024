@@ -4,6 +4,7 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import Shamik_Mondal_2221145.ReadWrite;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -48,6 +49,7 @@ public class Financial_AnalysisController implements Initializable {
                 Double.parseDouble(averageTotalAssetsTextField.getText())
         );
         financialAnalysisTextArea.appendText(financialAnalysis.toString());
+        ReadWrite.overWriteObjectToFile("FinancialAnalysis.bin", financialAnalysis);
     }
 
 }

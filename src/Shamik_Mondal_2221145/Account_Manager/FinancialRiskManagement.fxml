@@ -4,12 +4,13 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="728.0" style="-fx-background-color: #C0C0C0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Shamik_Mondal_2221145.Account_Manager.FinancialRiskManagementController">
+<AnchorPane id="AnchorPane" prefHeight="437.0" prefWidth="728.0" style="-fx-background-color: #C0C0C0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.Account_Manager.FinancialRiskManagementController">
    <children>
       <Label layoutX="239.0" prefHeight="50.0" prefWidth="234.0" text="Financial Risk Management" textFill="#ee2222" underline="true" wrapText="true">
          <font>
@@ -57,5 +58,10 @@
             <Font name="Bookman Old Style" size="18.0" />
          </font>
       </Button>
+      <ImageView fitHeight="50.0" fitWidth="62.0" layoutX="647.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../important%20Netbeans%20Project/images.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

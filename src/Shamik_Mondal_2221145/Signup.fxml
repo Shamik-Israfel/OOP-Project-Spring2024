@@ -7,9 +7,12 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.SignupController">
+
+<AnchorPane id="AnchorPane" prefHeight="442.0" prefWidth="600.0" style="-fx-background-color: FAEFC0;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Shamik_Mondal_2221145.SignupController">
     
 <children>
       <Label layoutX="28.0" layoutY="70.0" text="Name                   :" />
@@ -41,5 +44,10 @@
       <Label layoutX="8.0" layoutY="351.0" text="Must contain a special character,Uppercase" />
       <Label layoutX="8.0" layoutY="376.0" text="Lowercase and a number" />
       <Label layoutX="178.0" layoutY="376.0" text="example : @Abc@400" />
+      <ImageView fitHeight="116.0" fitWidth="81.0" layoutX="422.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../important%20Netbeans%20Project/images.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

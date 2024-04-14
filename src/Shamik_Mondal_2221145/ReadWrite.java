@@ -14,7 +14,8 @@ import Shamik_Mondal_2221145.HR_Manager.trainingModelClass;
 import Shamik_Mondal_2221145.Account_Manager.employeeSalaryDetails;
 import Shamik_Mondal_2221145.Account_Manager.expensesTrackingSystemModelclass;
 import Shamik_Mondal_2221145.Account_Manager.FinancialRisk;
-
+import Shamik_Mondal_2221145.Account_Manager.FinancialAnalysis;
+import Shamik_Mondal_2221145.Account_Manager.budgetManagementModelClass;
 
 
 
@@ -92,8 +93,10 @@ public class ReadWrite {
         ObservableList<jobRecruitModel> recruitData = FXCollections.observableArrayList();
         ObservableList<trainingModelClass> tmcData = FXCollections.observableArrayList();
         ObservableList<employeeSalaryDetails> SalaryCalculator = FXCollections.observableArrayList();
-         ObservableList<expensesTrackingSystemModelclass> expenseTracking = FXCollections.observableArrayList();
-         ObservableList<FinancialRisk> RiskFin = FXCollections.observableArrayList();
+        ObservableList<expensesTrackingSystemModelclass> expenseTracking = FXCollections.observableArrayList();
+        ObservableList<FinancialRisk> RiskFin = FXCollections.observableArrayList();
+        ObservableList<FinancialAnalysis>FinAna = FXCollections.observableArrayList();
+        ObservableList<budgetManagementModelClass>FinBudman = FXCollections.observableArrayList();
 
           
           
@@ -289,6 +292,43 @@ public class ReadWrite {
             }               
      
             
+           else if (instance instanceof FinancialAnalysis) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                     FinAna.add((FinancialAnalysis) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik financeanalysis exe");
+
+                }
+            }               
+            
+            
+            
+            
+            
+            
+             
+           else if (instance instanceof budgetManagementModelClass) {
+                f = new File(fileName);
+                fw = new FileInputStream(f);
+                ois = new ObjectInputStream(fw);
+                try {
+                    while (true) {
+                     FinBudman.add((budgetManagementModelClass) ois.readObject());
+                    }
+                }catch (Exception e) {
+                    System.out.println("Shamik budgetManagement exe");
+
+                }
+            }               
+            
+              
+            
+            
             
             
             
@@ -369,8 +409,10 @@ public class ReadWrite {
                 else if ( instance instanceof employeeSalaryDetails ) return SalaryCalculator;
                 else if ( instance instanceof expensesTrackingSystemModelclass ) return expenseTracking;
                 else if ( instance instanceof FinancialRisk ) return RiskFin;
+                else if ( instance instanceof FinancialAnalysis ) return FinAna;
+                else if ( instance instanceof budgetManagementModelClass ) return FinBudman;
 
-                 
+            
                 
                 return SData;
             }
