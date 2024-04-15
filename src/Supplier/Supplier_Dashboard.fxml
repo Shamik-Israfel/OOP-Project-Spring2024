@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="900.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Supplier.DashboardController">
+   <children>
+      <ImageView fitHeight="510.0" fitWidth="800.0" layoutX="39.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/images%20(2).jpeg" />
+         </image>
+      </ImageView>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="152.0" mnemonicParsing="false" onAction="#catalogOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Catalog" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/images.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="14.0" layoutY="327.0" mnemonicParsing="false" onAction="#orderOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Orders" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/download%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="129.0" layoutY="327.0" mnemonicParsing="false" onAction="#paymentStatusOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Payment " textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/images%20(1).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="129.0" layoutY="152.0" mnemonicParsing="false" onAction="#salesReportOnMouseClicked" opacity="0.76" prefHeight="74.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Sales Report" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/403-4039138_financial-statements-sales-report-logo-png-transparent-png.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <AnchorPane layoutX="646.0" layoutY="2.0" opacity="0.71" prefHeight="506.0" prefWidth="254.0" style="-fx-background-color: #c18640;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="27.0" layoutY="32.0" text="Administrator " textFill="WHITE">
+               <font>
+                  <Font name="Microsoft JhengHei" size="23.0" />
+               </font>
+            </Label>
+            <Label layoutX="55.0" layoutY="461.0" text="Copyright. All rights reserved" textFill="WHITE" />
+            <Label layoutX="118.0" layoutY="488.0" text="2024" textFill="#fff9f9">
+               <font>
+                  <Font name="Microsoft JhengHei" size="9.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="487.0" layoutY="94.0" mnemonicParsing="false" onAction="#logOutOnMouseClicked" opacity="0.76" prefHeight="366.0" prefWidth="148.0" style="-fx-background-color: #c18640;" text="Exit" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="19.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="101.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/download%20(2).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="247.0" layoutY="152.0" mnemonicParsing="false" opacity="0.76" prefHeight="74.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Sales Report" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/403-4039138_financial-statements-sales-report-logo-png-transparent-png.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="247.0" layoutY="327.0" mnemonicParsing="false" onAction="#shipmentOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Shipping" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="72.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/download.jpeg" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="367.0" layoutY="152.0" mnemonicParsing="false" onAction="#invoiceOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Invoice" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="77.0" fitWidth="83.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/download%20(3).png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="CENTER" contentDisplay="BOTTOM" layoutX="367.0" layoutY="327.0" mnemonicParsing="false" onAction="#customerSupportOnMouseClicked" opacity="0.76" prefHeight="105.0" prefWidth="102.0" style="-fx-background-color: #c18640;" text="Customer&#10; Support" textAlignment="CENTER" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Microsoft JhengHei" size="14.0" />
+         </font>
+         <graphic>
+            <ImageView disable="true" fitHeight="51.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/22.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

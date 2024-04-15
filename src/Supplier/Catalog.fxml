@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="866.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <Label layoutX="14.0" layoutY="14.0" text="Supplier Catalog" />
+        <ScrollPane layoutX="14.0" layoutY="50.0" prefHeight="599.0" prefWidth="772.0">
+            <content>
+                <VBox prefWidth="756.0" spacing="10">
+                    <!-- Item 1 -->
+                    <HBox spacing="10">
+                        <ImageView fitHeight="100.0" fitWidth="100.0">
+                            <image>
+                                <Image url="@images/download.jpeg" />
+                            </image>
+                        </ImageView>
+                        <VBox spacing="5">
+                            <Label text="Football" />
+                            <TextField promptText="Price" />
+                            <TextField promptText="Details" />
+                            <Button onAction="#editOnMouseclicked" text="Edit" />
+                        </VBox>
+                        <ImageView fitHeight="100.0" fitWidth="100.0">
+                            <image>
+                                <Image url="@images/download%20(1).jpeg" />
+                            </image>
+                        </ImageView>
+                       
+                       <!-- Repeat the above structure for remaining items -->
+                       <!-- Item 2 -->
+                       <HBox spacing="10">
+                           <VBox spacing="5">
+                               <Label text="Boots" />
+                               <TextField promptText="Price" />
+                               <TextField promptText="Details" />
+                               <Button onAction="#editOnMouseclicked" text="Edit" />
+                           </VBox>
+                       </HBox>
+                    </HBox>
+               <HBox layoutX="10.0" layoutY="10.0" spacing="10">
+                  <children>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(2).jpeg" />
+                        </image>
+                     </ImageView>
+                     <VBox spacing="5">
+                        <children>
+                           <Label text="Glooves" />
+                           <TextField promptText="Price" />
+                           <TextField promptText="Details" />
+                           <Button text="Edit" />
+                        </children>
+                     </VBox>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/images.jpeg" />
+                        </image>
+                     </ImageView>
+                     <HBox spacing="10">
+                        <children>
+                           <VBox spacing="5">
+                              <children>
+                                 <Label text="Gear Bag" />
+                                 <TextField promptText="Price" />
+                                 <TextField promptText="Details" />
+                                 <Button text="Edit" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="127.0" spacing="10">
+                  <children>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(3).jpeg" />
+                        </image>
+                     </ImageView>
+                     <VBox spacing="5">
+                        <children>
+                           <Label text="Water Bottle" />
+                           <TextField promptText="Price" />
+                           <TextField promptText="Details" />
+                           <Button text="Edit" />
+                        </children>
+                     </VBox>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(7).jpeg" />
+                        </image>
+                     </ImageView>
+                     <HBox spacing="10">
+                        <children>
+                           <VBox spacing="5">
+                              <children>
+                                 <Label text="Practice Cones" />
+                                 <TextField promptText="Price" />
+                                 <TextField promptText="Details" />
+                                 <Button text="Edit" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="244.0" spacing="10">
+                  <children>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(5).jpeg" />
+                        </image>
+                     </ImageView>
+                     <VBox spacing="5">
+                        <children>
+                           <Label text="Socks" />
+                           <TextField promptText="Price" />
+                           <TextField promptText="Details" />
+                           <Button text="Edit" />
+                        </children>
+                     </VBox>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(4).jpeg" />
+                        </image>
+                     </ImageView>
+                     <HBox spacing="10">
+                        <children>
+                           <VBox spacing="5">
+                              <children>
+                                 <Label text="Shin Guards" />
+                                 <TextField promptText="Price" />
+                                 <TextField promptText="Details" />
+                                 <Button text="Edit" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+               <HBox layoutX="10.0" layoutY="361.0" spacing="10">
+                  <children>
+                     <ImageView fitHeight="100.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/download%20(6).jpeg" />
+                        </image>
+                     </ImageView>
+                     <VBox spacing="5">
+                        <children>
+                           <Label text="Shorts" />
+                           <TextField promptText="Price" />
+                           <TextField promptText="Details" />
+                           <Button text="Edit" />
+                        </children>
+                     </VBox>
+                     <ImageView fitHeight="97.0" fitWidth="100.0">
+                        <image>
+                           <Image url="@images/4cb3b9d3643e301d1550d4e318c65a81.jpg" />
+                        </image>
+                     </ImageView>
+                     <HBox spacing="10">
+                        <children>
+                           <VBox spacing="5">
+                              <children>
+                                 <Label text="Jersy" />
+                                 <TextField promptText="Price" />
+                                 <TextField promptText="Details" />
+                                 <Button text="Edit" />
+                              </children>
+                           </VBox>
+                        </children>
+                     </HBox>
+                  </children>
+               </HBox>
+                    
+                    <!-- Repeat similar structure for items 3 to 20 -->
+                    
+                </VBox>
+            </content>
+        </ScrollPane>
+        
+        <!-- Add New Item Section -->
+        <VBox layoutX="58.0" layoutY="707.0" spacing="5">
+            <Label text="Add New Item" />
+            <TextField promptText="Item Name" />
+            <TextField promptText="Price" />
+            <TextField promptText="Details" />
+            <Button text="Add" />
+        </VBox>
+      <ImageView fitHeight="124.0" fitWidth="156.0" layoutX="224.0" layoutY="713.0" pickOnBounds="true" preserveRatio="true" />
+    </children>
+</AnchorPane>
