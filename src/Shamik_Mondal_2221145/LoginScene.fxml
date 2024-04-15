@@ -53,7 +53,7 @@
       <ImageView fitHeight="279.0" fitWidth="200.0" layoutX="268.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" />
       <ImageView fitHeight="378.0" fitWidth="524.0" layoutX="6.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../important%20Netbeans%20Project/48518391178449.5e6345c8e3dd1.jpg" />
+            <Image url="@../images/48518391178449.5e6345c8e3dd1.jpg" />
          </image>
       </ImageView>
    </children>
