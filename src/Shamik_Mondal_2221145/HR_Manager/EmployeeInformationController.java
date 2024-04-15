@@ -142,7 +142,7 @@ public class EmployeeInformationController implements Initializable {
     @FXML
     private void downloadPdfButtonOnClicked(ActionEvent event) {
         ObservableList<Employee> employees = empInfoTableView.getItems();
-    if (employees != null && !employees.isEmpty()) {
+    if ( !employees.isEmpty()) {
         GeneratePDFModelClass.generatePdf("Employee Information", "Job Required");
         // Optionally show success message or perform other actions
     } else {
