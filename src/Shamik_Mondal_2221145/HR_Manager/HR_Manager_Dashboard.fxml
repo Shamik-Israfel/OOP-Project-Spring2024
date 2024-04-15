@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
-    
-</AnchorPane>
+<BorderPane fx:id="borderPaneId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.HR_Manager.HR_Manager_DashboardController">
+   <top>
+      <MenuBar style="-fx-background-color: #7FFFD4;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Employee Section">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#accessToEmployeeMenuItemOnClick" text="Access to employee information." />
+                  <MenuItem mnemonicParsing="false" onAction="#trainingWorkshopMenuItemOnClick" text="Assign training &amp; workshops." />
+                  <MenuItem mnemonicParsing="false" onAction="#paySalariesMenuItemOnClick" text="Pay salaries" />
+                  <MenuItem mnemonicParsing="false" onAction="#jobRecruitmentMenuItemOnClick" text="Add Job Recruitment." />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Request">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#leaveApproveMenuItemOnClick" text="Leave requests &amp; approvals." />
+                  <MenuItem mnemonicParsing="false" onAction="#applyLeaveMenuItemOnClick" text="Apply for leave" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Time Management">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#timeAttendanceMenuItemOnClick" text="Attendance &amp; Performance" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Log Out">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#logOutMenuItemOnClick" text="Log Out" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #90EE90;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="17.0" layoutY="14.0" prefHeight="60.0" prefWidth="362.0" text="Welcome To The DashBoard Of HR: Where People and Pixels Meet!" underline="true" wrapText="true">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="21.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #98FB98;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="13.0" layoutY="63.0" prefHeight="105.0" prefWidth="173.0" text="Time to Crunch Some HR Numbers and Chew on Data Delights!" wrapText="true">
+               <font>
+                  <Font name="Franklin Gothic Heavy" size="15.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #00A36C;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>

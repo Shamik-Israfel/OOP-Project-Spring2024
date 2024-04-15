@@ -1,11 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.Account_Manager.Account_Manager_DashboardController">
-    
-</AnchorPane>
+<BorderPane fx:id="accBorderpaneId" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="762.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Shamik_Mondal_2221145.Account_Manager.Account_Manager_DashboardController">
+   <top>
+      <MenuBar style="-fx-background-color: #FCF3CF;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Financial Section">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#financialAnalysisMenuItemOnClick" text="Financial Analysis" />
+                  <MenuItem mnemonicParsing="false" onAction="#financialRiskManagementMenuItemOnClick" text="Financial Risk Management" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Finance management">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#budgetManagementMenuItemOnClick" text="Budget management" />
+                  <MenuItem mnemonicParsing="false" onAction="#incomeManagementMenuItemOnClick" text="Income management" />
+                  <MenuItem mnemonicParsing="false" onAction="#expenseTrackingSystemMenuItemOnClick" text="Expenses Tracking System" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Tools">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#employeeSalaryCalculatorMenuItemOnClick" text="Employee Salary Calculator" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Leave">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#accApplyForLeaveMenuItemOnClick" text="Apply For Leave" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Log Out">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#accLogOutMenuItemClick" text="Log Out" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F9E79F;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="75.0" layoutY="31.0" prefHeight="61.0" prefWidth="419.0" text="Welcome To The DashBoard Of Account Manager">
+               <font>
+                  <Font name="Britannic Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="81.0" prefHeight="181.0" prefWidth="471.0" text="Where even the imaginary numbers have real consequences" textFill="#1d39eb" wrapText="true">
+               <font>
+                  <Font name="Bookman Old Style Bold" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <right>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F4D03F;" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #F39C12;" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
