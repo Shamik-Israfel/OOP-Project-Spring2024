@@ -4,11 +4,13 @@
  */
 package Shamik_Mondal_2221145.Account_Manager;
 
+import java.io.Serializable;
+
 /**
  *
  * @author hp
  */
-public class budgetManagementModelClass {
+public class budgetManagementModelClass implements Serializable{
    private double approximateBudgetForAwayMatches;
    private double approximateBudgetForFoodAndWaterSupply; 
    private double approximateBudgetForTransportation ;
