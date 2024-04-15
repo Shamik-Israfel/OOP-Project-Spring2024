@@ -58,12 +58,12 @@ public class LoginSceneController implements Initializable {
                     SceneSwitching newScene = new SceneSwitching();
                     newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145/HR_Manager/HR_Manager_Dashboard.fxml");
                 }
-                else if (user.equals("Accounts Officer")) {
+                else if (user.equals("Account Manager")) {
                    
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
                     SceneSwitching newScene = new SceneSwitching();
-                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145/Account_Manager/Account_Manager_Dashboard.fxml");  
+                    newScene.sceneSwitchingWithoutDataPassing(stage,"/Shamik_Mondal_2221145/Account_Manager/Account_Manager_Dashboard.fxml");
                 }
                 else if (user.equals("Coach")) {
                    

@@ -94,17 +94,24 @@ public class expensesTrackingSystemController implements Initializable {
 
         expTextArea.setText(String.valueOf(YearExpComboBox.getSelectionModel().getSelectedItem()));
         
- ReadWrite.writeObjectToFile("Expense.Bin", ExpensesTrackingSystemModelclass);
+ ReadWrite.writeObjectToFile("Expense.bin", ExpensesTrackingSystemModelclass);
         totalExpenseDetailsTableView.getItems().clear(); 
         totalExpenseDetailsTableView.getItems().add(ExpensesTrackingSystemModelclass);
 
     
     }
 
+    
+
     @FXML
-    private void expShowPreviousDataButtonOnClick(ActionEvent event) {
-        incomeManagement DummyExpense =new incomeManagement(0,0,0);
-             ObservableList<expensesTrackingSystemModelclass> expList = (ObservableList<expensesTrackingSystemModelclass>) ReadWrite.readObjectToFile("Expense.Bin", DummyExpense);
+    private void expGeneratePieChartButtonOnClick(ActionEvent event) {
+        
+    }
+
+    @FXML
+    private void expenseShowPreviousDataButtonOnClick(ActionEvent event) {
+        expensesTrackingSystemModelclass DummyExpense =new expensesTrackingSystemModelclass(0.0,0.0,0.0,0.0);
+             ObservableList<expensesTrackingSystemModelclass> expList = (ObservableList<expensesTrackingSystemModelclass>) ReadWrite.readObjectToFile("Expense.bin", DummyExpense);
          totalExpenseDetailsTableView.setItems(expList );
     }
 

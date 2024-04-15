@@ -76,5 +76,10 @@
             <TableColumn fx:id="perEmployeeSaalaryTableCol" minWidth="0.0" prefWidth="136.0" text="\%employee salary" />
         </columns>
       </TableView>
+      <Button layoutX="931.0" layoutY="222.0" mnemonicParsing="false" onAction="#expenseShowPreviousDataButtonOnClick" prefHeight="39.0" prefWidth="255.0" text="Show Previous data">
+         <font>
+            <Font name="Bookman Old Style" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

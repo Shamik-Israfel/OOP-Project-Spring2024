@@ -77,7 +77,7 @@ public class Account_Manager_DashboardController implements Initializable {
         //Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         Stage newWindow = new Stage();
 
-        newWindow.setTitle("Budget Management");
+        newWindow.setTitle("Income Management");
         newWindow.setScene(fileChooserViewScene);
         newWindow.show();
     }
