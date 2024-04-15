@@ -19,7 +19,7 @@ public class Simulating_Operations_Of_Bangladesh_Football_Fedaration extends App
     
      @Override
      public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/Shamik_Mondal_2221145/HR_Manager/performancePieChart.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Shamik_Mondal_2221145/LoginScene.fxml"));
         
         Scene scene = new Scene(root);
         

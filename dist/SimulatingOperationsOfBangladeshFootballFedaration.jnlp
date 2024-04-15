@@ -8,10 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-<<<<<<< HEAD
-    <jar href="SimulatingOperationsOfBangladeshFootballFedaration.jar" size="52333" download="eager" />
-=======
-    <jar href="SimulatingOperationsOfBangladeshFootballFedaration.jar" size="98172" download="eager" />
+    <jar href="SimulatingOperationsOfBangladeshFootballFedaration.jar" size="131676" download="eager" />
     <jar href="lib\barcodes-7.1.3-javadoc.jar" size="193016" download="eager" />
     <jar href="lib\barcodes-7.1.3-sources.jar" size="148847" download="eager" />
     <jar href="lib\barcodes-7.1.3.jar" size="150343" download="eager" />
@@ -44,7 +41,6 @@
     <jar href="lib\svg-7.1.3-javadoc.jar" size="436812" download="eager" />
     <jar href="lib\svg-7.1.3-sources.jar" size="123816" download="eager" />
     <jar href="lib\svg-7.1.3.jar" size="97170" download="eager" />
->>>>>>> 53ecaf71bd3e661ad409dc95ca8dda9d451863e5
   </resources>
   <jfx:javafx-desc  width="800" height="600" main-class="Simulating_Operations_Of_Bangladesh_Football_Fedaration.Simulating_Operations_Of_Bangladesh_Football_Fedaration"  name="SimulatingOperationsOfBangladeshFootballFedaration" />
   <update check="always"/>
