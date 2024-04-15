@@ -47,6 +47,8 @@ public class SignupController implements Initializable {
     private ToggleGroup tg;
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -108,4 +110,3 @@ public class SignupController implements Initializable {
     private void backToLoginButtonONClick(ActionEvent event) {
     }
     }
-

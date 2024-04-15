@@ -3,14 +3,33 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/Dashboard.fxml</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/Main.java</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/TrainingMaterials.fxml</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/PlayersProfile.fxml</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/DashboardController.java</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/PlayerProfileController.java</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/userProfile.fxml</file>
-            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Dipto_Mohammad_Rimon_Sadman_2221670/Player/MatchAnalysis.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/Home.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/HomeController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/PlayersProfile.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/PerformanceTracking.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/userProfile.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/Invoices.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/CommunicationController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/images/403-4039138_financial-statements-sales-report-logo-png-transparent-png.png</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/NewcatController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/MatchAnalysisController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/Dashboard.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/Communication.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/DesignTest.css</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/MainController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/newCascadeStyleSheet.css</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/Invoices.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/Main.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/PlayerProfileController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/Player.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/UserProfileController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/TrainingMaterials.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/InjuryReportingController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/MatchAnalysis.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/DashboardController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/InvoicesController.java</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Supplier/newcat.fxml</file>
+            <file>file:/D:/New%20folder/SimulatingOperationsOfBangladeshFootballFederation/src/Player/injuryReporting.fxml</file>
         </group>
     </open-files>
 </project-private>

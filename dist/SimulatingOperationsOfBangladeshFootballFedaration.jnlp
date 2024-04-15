@@ -8,8 +8,8 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="SimulatingOperationsOfBangladeshFootballFedaration.jar" size="36778" download="eager" />
+    <jar href="SimulatingOperationsOfBangladeshFootballFedaration.jar" size="182265" download="eager" />
   </resources>
-  <jfx:javafx-desc  width="800" height="600" main-class="Simulating_Operations_Of_Bangladesh_Football_Fedaration.Simulating_Operations_Of_Bangladesh_Football_Fedaration"  name="SimulatingOperationsOfBangladeshFootballFedaration" />
+  <jfx:javafx-desc  width="800" height="600" main-class="Supplier.MainController"  name="SimulatingOperationsOfBangladeshFootballFedaration" />
   <update check="always"/>
 </jnlp>

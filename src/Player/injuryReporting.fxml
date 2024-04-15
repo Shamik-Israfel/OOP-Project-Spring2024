@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600" prefWidth="800" style="-fx-background-color: #f0f0f0;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Player.InjuryReportingController">
+
+    <top>
+        <Label style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Injury Tracking" />
+    </top>
+
+    <center>
+        <AnchorPane>
+            <children>
+                <!-- Injury Details -->
+                <VBox layoutX="50" layoutY="80" spacing="10">
+                    <Label text="Injury Type:" />
+                    <TextArea fx:id="injuryTypeTextArea" prefHeight="100" prefWidth="300" promptText="Enter injury type and description" style="-fx-background-color: lightblue;" />
+
+                    <Label text="Injury Severity:" />
+                    <TextArea fx:id="injurySeverityTextArea" prefHeight="100" prefWidth="300" promptText="Enter injury severity and details" style="-fx-background-color: lightblue;" />
+                </VBox>
+
+                <VBox layoutX="400" layoutY="80" spacing="10">
+                    <Label text="Upload Medical Document:" />
+                    <Button onAction="#uploadDocument" style="-fx-background-color: black; -fx-text-fill: white;" text="Choose File" />
+
+                    <Label fx:id="selectedFileLabel" />
+                </VBox>
+            </children>
+        </AnchorPane>
+    </center>
+
+    <bottom>
+        <Button onAction="#backToDashboard" style="-fx-background-color: #008080; -fx-text-fill: white;" text="Back to Dashboard" />
+    </bottom>
+</BorderPane>
